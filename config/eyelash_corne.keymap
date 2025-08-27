@@ -1,5 +1,5 @@
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 25
 
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
@@ -14,9 +14,9 @@
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
-    acceleration-exponent = <1>;      // 0
-    time-to-max-speed-ms = <100>;     // 300
-    delay-ms = <0>;                   // 0
+    acceleration-exponent = <1>;
+    time-to-max-speed-ms = <100>;
+    delay-ms = <0>;
 };
 
 &mmv {
@@ -28,123 +28,120 @@
 &soft_off { hold-time-ms = <2000>; };
 
 / {
-    behaviors {
-        td0: td0 {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
-        };
-
-        // --- Macros: "->", "=>", "::"
-        macro_arrow: macro_arrow {
-            compatible = "zmk,behavior-macro";
-            label = "ARROW";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS &kp LS(DOT)>;        // "->"
-        };
-
-        macro_fatarrow: macro_fatarrow {
-            compatible = "zmk,behavior-macro";
-            label = "FATARR";
-            #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp LS(DOT)>;        // "=>"
-        };
-
-        macro_scope: macro_scope {
-            compatible = "zmk,behavior-macro";
-            label = "SCOPE";
-            #binding-cells = <0>;
-            bindings = <&kp LS(SEMICOLON) &kp LS(SEMICOLON)>; // "::"
-        };
+  behaviors {
+    /* vorhanden aus deiner Config */
+    td0: td0 {
+      compatible = "zmk,behavior-tap-dance";
+      display-name = "Shift/Caps Lock Tap Dance";
+      #binding-cells = <0>;
+      bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
     };
 
-    rgb_encoder: rgb_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+    /* ===== Unicode: Kleinbuchstaben ===== */
+    umlaut_a: umlaut_a { compatible = "zmk,behavior-unicode"; label = "ä"; #binding-cells = <0>; unicode = <0x00E4>; };
+    umlaut_o: umlaut_o { compatible = "zmk,behavior-unicode"; label = "ö"; #binding-cells = <0>; unicode = <0x00F6>; };
+    umlaut_u: umlaut_u { compatible = "zmk,behavior-unicode"; label = "ü"; #binding-cells = <0>; unicode = <0x00FC>; };
+    eszett:   eszett   { compatible = "zmk,behavior-unicode"; label = "ß"; #binding-cells = <0>; unicode = <0x00DF>; };
+
+    /* ===== Unicode: Großbuchstaben ===== */
+    umlaut_A: umlaut_A { compatible = "zmk,behavior-unicode"; label = "Ä"; #binding-cells = <0>; unicode = <0x00C4>; };
+    umlaut_O: umlaut_O { compatible = "zmk,behavior-unicode"; label = "Ö"; #binding-cells = <0>; unicode = <0x00D6>; };
+    umlaut_U: umlaut_U { compatible = "zmk,behavior-unicode"; label = "Ü"; #binding-cells = <0>; unicode = <0x00DC>; };
+
+    /* ===== Doppel-Tap „SS“ für ß ===== */
+    macro_SS: macro_SS { compatible = "zmk,behavior-macro"; label = "SS"; #binding-cells = <0>; bindings = <&kp LS(S) &kp LS(S)>; };
+
+    /* ===== Tap-Dance: Tap = klein, Doppel-Tap = groß (bzw. SS) ===== */
+    td_ae: td_ae { compatible = "zmk,behavior-tap-dance"; label="ä/Ä"; #binding-cells=<0>; bindings = <&umlaut_a>, <&umlaut_A>; tapping-term-ms=<200>; };
+    td_oe: td_oe { compatible = "zmk,behavior-tap-dance"; label="ö/Ö"; #binding-cells=<0>; bindings = <&umlaut_o>, <&umlaut_O>; tapping-term-ms=<200>; };
+    td_ue: td_ue { compatible = "zmk,behavior-tap-dance"; label="ü/Ü"; #binding-cells=<0>; bindings = <&umlaut_u>, <&umlaut_U>; tapping-term-ms=<200>; };
+    td_sz: td_sz { compatible = "zmk,behavior-tap-dance"; label="ß/SS"; #binding-cells=<0>; bindings = <&eszett>, <&macro_SS>; tapping-term-ms=<200>; };
+  };
+
+  /* ===== deine Encoder-Behaviors beibehalten ===== */
+  rgb_encoder: rgb_encoder {
+    compatible = "zmk,behavior-sensor-rotate";
+    #sensor-binding-cells = <0>;
+    bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+  };
+
+  scroll_encoder: scroll_encoder {
+    compatible = "zmk,behavior-sensor-rotate";
+    #sensor-binding-cells = <0>;
+    bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+    tap-ms = <100>;
+  };
+
+  /* ===== deine Combos beibehalten ===== */
+  combos {
+    compatible = "zmk,combos";
+    softoff {
+      bindings = <&soft_off>;
+      key-positions = <1 15 29>;
+    };
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    /* ================= BASE (Deutsch + ergonomisch, Colemak-DH-inspiriert) ================= */
+    base_layer {
+      display-name = "BASE";
+      bindings = <
+/* Row 1 */ &kp TAB  &kp Q  &kp W  &kp F  &kp P  &kp B       &rgb_ug RGB_HUI           &kp J  &kp L  &kp U  &kp Y  &kp SEMI  &td_ae
+/* Row 2 */ &rgb_ug RGB_TOG  &mt LCTRL A  &mt LALT R  &mt LSHFT S  &mt LGUI T  &kp G   &rgb_ug RGB_EFR  &rgb_ug RGB_COLOR_HSB(0,0,100)  &rgb_ug RGB_EFF   &kp M  &mt RGUI N  &mt RSHFT E  &mt RALT I  &mt RCTRL O  &td_oe
+/* Row 3 */ &td_sz  &kp Z  &kp X  &kp C  &kp D  &kp V         &kp SPACE                  &rgb_ug RGB_HUD                         &kp K  &kp H  &kp COMMA  &kp DOT  &kp FSLH  &td_ue
+/* Thumbs */            &kp LGUI  &mo 1  &lt 3 SPACE                                          &lt 3 ENTER  &mo 2  &kp RALT
+      >;
+      sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
     };
 
-    scroll_encoder: scroll_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-        tap-ms = <100>;
+    /* ================ RAISE – Coding/Symbole (über linken Daumen/Space halten) ================ */
+    raise_layer {
+      display-name = "RAISE";
+      bindings = <
+/* Row 1 */ &kp LBKT &kp LCBR &kp LPAR &kp RPAR &kp RCBR &kp RBKT   &rgb_ug RGB_HUI   &kp LT   &kp GT   &kp EQUAL &kp PLUS  &kp TILDE &kp GRAVE
+/* Row 2 */ &rgb_ug RGB_TOG  &kp EXCL &kp MINUS &kp ASTRK &kp FSLH &kp BSLH           &rgb_ug RGB_EFR  &rgb_ug RGB_COLOR_HSB(0,0,100)  &rgb_ug RGB_EFF   &kp AMPS &kp CARET &kp COLON &kp SEMI &kp QMARK &kp AT
+/* Row 3 */ &kp UNDER &kp HASH &kp SQT &kp DQT  &kp COMMA &kp DOT   &kp SPACE          &rgb_ug RGB_HUD                         &kp DLLR &kp PRCNT &kp LEFT &kp RIGHT &kp UP &kp DOWN
+/* Thumbs */        &kp LGUI  &mo 1  &lt 3 SPACE                                      &lt 3 ENTER  &mo 2  &kp RALT
+      >;
+      sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        softoff {
-            bindings = <&soft_off>;
-            key-positions = <1 15 29>;
-        };
+    /* ================ LOWER – Navigation/Editing (über linken Daumen/Tab halten) ================ */
+    lower_layer {
+      display-name = "LOWER";
+      bindings = <
+/* Row 1 */ &kp ESC  &kp HOME &kp UP   &kp END  &kp PG_UP &kp CAPS   &rgb_ug RGB_HUI   &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6
+/* Row 2 */ &rgb_ug RGB_TOG  &kp TAB  &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN            &rgb_ug RGB_EFR  &rgb_ug RGB_COLOR_HSB(0,0,100)  &rgb_ug RGB_EFF   &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+/* Row 3 */ &kp LCTRL &kp LGUI &kp LALT &kp LSHFT &kp LC(LEFT) &kp LC(RIGHT)  &kp SPACE  &rgb_ug RGB_HUD                         &kp LS(LEFT) &kp LS(DOWN) &kp LS(UP) &kp LS(RIGHT) &kp DEL &trans
+/* Thumbs */        &kp LGUI  &mo 1  &lt 3 SPACE                                      &lt 3 ENTER  &mo 2  &kp RALT
+      >;
+      sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
     };
 
-    keymap {
-        compatible = "zmk,keymap";
-
-        // ===== Default (dein aktuelles Layout; nur rechter äußerer Daumen geändert: Tap=DEL / Hold=SYS) =====
-        default_layer {
-            display-name = "QWERTY";
-            bindings = <
-&kp TAB          &kp Q  &kp W  &kp E     &kp R  &kp T                                      &rgb_ug RGB_HUI                                  &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&rgb_ug RGB_TOG  &kp A  &kp S  &kp D     &kp F  &kp G                     &rgb_ug RGB_EFR  &rgb_ug RGB_COLOR_HSB(0,0,100)  &rgb_ug RGB_EFF  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL        &kp Z  &kp X  &kp C     &kp V  &kp B        &kp SPACE                     &rgb_ug RGB_HUD                                  &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                               &kp LGUI  &mo 1  &lt 3 SPACE                                                                                 &lt 3 ENTER  &mo 2  &lt 4 DEL
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-        };
-
-        // ===== LOWER (deine "NUMBER"-Ebene, unverändert) =====
-        lower_layer {
-            display-name = "NUMBER";
-            bindings = <
-&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5                                         &mmv MOVE_UP                     &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                   &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
-&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
-                                         &trans        &trans        &trans                                                                          &kp INS          &kp DEL          &trans
-            >;
-
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        // ===== RAISE (neu: Klammern links; rechts Vergleich/Arithmetik/Strings; Macros unten rechts) =====
-        raise_layer {
-            display-name = "SYMBOL";
-            bindings = <
-/* Row 1 */  &kp LBKT    &kp LCBR    &kp LPAR    &kp RPAR    &kp RCBR    &kp RBKT      &mmv MOVE_UP        &kp LT      &kp GT      &kp EQUAL  &kp PLUS   &kp TILDE  &kp GRAVE
-/* Row 2 */  &kp EXCL    &kp MINUS   &kp ASTRK   &kp SLASH   &kp BSLH    &kp PIPE      &mmv MOVE_LEFT      &kp AMPS    &kp CARET   &kp COLON  &kp SEMI   &kp QMARK  &kp AT
-/* Row 3 */  &kp UNDER   &kp HASH    &kp SQT     &kp DQT     &kp DLLR    &kp PRCNT     &mmv MOVE_DOWN      &kp COMMA   &kp DOT     &kp N0     &macro_arrow &macro_fatarrow &macro_scope
-            >;
-
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        // ===== Fn (dein "layer_3", unverändert) =====
-        layer_3 {
-            display-name = "Fn";
-            bindings = <
-&studio_unlock  &kp F1      &kp F2     &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&trans          &trans      &mkp LCLK  &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans          &sys_reset  &trans     &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                                       &trans       &trans     &trans                                                                   &trans       &trans     &trans
-            >;
-
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        // ===== NEU: SYS (Bluetooth / Output / RGB / Backlight) =====
-        sys_layer {
-            display-name = "SYS";
-            bindings = <
-/* Row 1 */  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &bt BT_NXT     &mmv MOVE_UP   &bt BT_PRV   &bt BT_CLR   &bt BT_CLR_ALL  &out OUT_USB  &out OUT_BLE  &out OUT_TOG
-/* Row 2 */  &rgb_ug RGB_TOG &rgb_ug RGB_HUI &rgb_ug RGB_HUD &rgb_ug RGB_SAI &rgb_ug RGB_SAD &rgb_ug RGB_EFF  &mmv MOVE_LEFT  &rgb_ug RGB_EFR &rgb_ug RGB_BRI &rgb_ug RGB_BRD &rgb_ug RGB_SPI &rgb_ug RGB_SPD &rgb_ug RGB_COLOR_HSB(200,100,100)
-/* Row 3 */  &bl BL_TOG   &bl BL_INC   &bl BL_DEC   &bl BL_CYCLE  &bl BL_SET 50  &bl BL_OFF      &mmv MOVE_DOWN  &kp NO        &kp NO        &kp NO        &kp NO        &kp NO        &kp NO
-            >;
-
-            sensor-bindings = <&scroll_encoder>;
-        };
+    /* ================ NUM – Zahlen/Operatoren (über rechten Daumen/Enter halten) ================ */
+    num_layer {
+      display-name = "NUM";
+      bindings = <
+/* Row 1 */ &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6   &rgb_ug RGB_HUI    &kp N7 &kp N8 &kp N9 &kp N0 &kp LPAR &kp RPAR
+/* Row 2 */ &rgb_ug RGB_TOG  &kp LBKT &kp RBKT &kp LCBR &kp RCBR &kp LT     &rgb_ug RGB_EFR  &rgb_ug RGB_COLOR_HSB(0,0,100)  &rgb_ug RGB_EFF   &kp GT &kp EQUAL &kp PLUS &kp MINUS &kp ASTRK &kp FSLH
+/* Row 3 */ &kp COMMA &kp DOT &kp COLON &kp SEMI &kp DQT &kp SQT   &kp SPACE  &rgb_ug RGB_HUD                         &kp AT &kp HASH &kp CARET &kp AMPS &kp UNDER &kp BSLH
+/* Thumbs */        &kp LGUI  &mo 1  &lt 3 SPACE                                      &lt 3 ENTER  &mo 2  &kp RALT
+      >;
+      sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
     };
+
+    /* ================ SYS – Bluetooth / Output / RGB / Backlight (optional via eigener Key) ================ */
+    sys_layer {
+      display-name = "SYS";
+      bindings = <
+/* Row 1 */ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_NXT  &rgb_ug RGB_HUI   &bt BT_PRV &bt BT_CLR &bt BT_CLR_ALL &out OUT_USB &out OUT_BLE &out OUT_TOG
+/* Row 2 */ &rgb_ug RGB_TOG &rgb_ug RGB_HUI &rgb_ug RGB_HUD &rgb_ug RGB_SAI &rgb_ug RGB_SAD &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_COLOR_HSB(0,0,100)  &rgb_ug RGB_EFF  &rgb_ug RGB_BRI &rgb_ug RGB_BRD &rgb_ug RGB_SPI &rgb_ug RGB_SPD
+/* Row 3 */ &bl BL_TOG &bl BL_INC &bl BL_DEC &bl BL_CYCLE &bl BL_SET 50 &bl BL_OFF  &kp SPACE  &rgb_ug RGB_HUD  &trans &trans &trans &trans &trans &trans
+/* Thumbs */        &kp LGUI  &mo 1  &lt 3 SPACE                                      &lt 3 ENTER  &mo 2  &kp RALT
+      >;
+      sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+    };
+  };
 };

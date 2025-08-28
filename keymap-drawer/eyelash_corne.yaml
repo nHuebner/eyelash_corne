@@ -14,17 +14,17 @@ layers:
   - Y
   - {t: ;, s: ':'}
   - '&deae'
-  - {t: A, h: '$$mdi:apple-keyboard-shift$$'}
+  - $$mdi:keyboard-esc$$
   - {t: A, h: LEFT WIN}
   - {t: R, h: '$$mdi:apple-keyboard-option$$'}
   - {t: S, h: '$$mdi:apple-keyboard-control$$'}
-  - T
+  - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
   - G
   - RGB EFR
   - RGB TOG
   - RGB EFF
   - M
-  - N
+  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: E, h: '$$mdi:apple-keyboard-control$$'}
   - {t: I, h: '$$mdi:apple-keyboard-option$$'}
   - {t: O, h: RIGHT WIN}
@@ -44,8 +44,8 @@ layers:
   - {t: /, s: '?'}
   - '&deue'
   - LGUI
-  - {t: '$$mdi:backspace-reverse-outline$$', h: CODING}
-  - {t: '$$mdi:keyboard-space$$', h: NUMBER}
+  - {t: '$$mdi:keyboard-space$$', h: CODING}
+  - {t: '$$mdi:backspace-reverse-outline$$', h: NUMBER}
   - {t: '$$mdi:keyboard-return$$', h: SYS}
   - {t: '$$mdi:backspace$$', h: SYMBOL}
   - $$mdi:apple-keyboard-option$$

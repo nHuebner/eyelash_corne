@@ -29,37 +29,58 @@
 &soft_off { hold-time-ms = <2000>; };
 
 / {
-    behaviors {
-        td0: td0 {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
-        };
+  behaviors {
+    /* vorhanden aus deiner Config */
+    td0: td0 {
+      compatible = "zmk,behavior-tap-dance";
+      display-name = "Shift/Caps Lock Tap Dance";
+      #binding-cells = <0>;
+      bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
     };
 
-    rgb_encoder: rgb_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+    /* ===== Unicode: Kleinbuchstaben ===== */
+    umlaut_a: umlaut_a { compatible = "zmk,behavior-unicode"; label = "ä"; #binding-cells = <0>; unicode = <0x00E4>; };
+    umlaut_o: umlaut_o { compatible = "zmk,behavior-unicode"; label = "ö"; #binding-cells = <0>; unicode = <0x00F6>; };
+    umlaut_u: umlaut_u { compatible = "zmk,behavior-unicode"; label = "ü"; #binding-cells = <0>; unicode = <0x00FC>; };
+    eszett:   eszett   { compatible = "zmk,behavior-unicode"; label = "ß"; #binding-cells = <0>; unicode = <0x00DF>; };
+
+    /* ===== Unicode: Großbuchstaben ===== */
+    umlaut_A: umlaut_A { compatible = "zmk,behavior-unicode"; label = "Ä"; #binding-cells = <0>; unicode = <0x00C4>; };
+    umlaut_O: umlaut_O { compatible = "zmk,behavior-unicode"; label = "Ö"; #binding-cells = <0>; unicode = <0x00D6>; };
+    umlaut_U: umlaut_U { compatible = "zmk,behavior-unicode"; label = "Ü"; #binding-cells = <0>; unicode = <0x00DC>; };
+
+    /* ===== Doppel-Tap „SS“ für ß ===== */
+    macro_SS: macro_SS { compatible = "zmk,behavior-macro"; label = "SS"; #binding-cells = <0>; bindings = <&kp LS(S) &kp LS(S)>; };
+
+    /* ===== Tap-Dance: Tap = klein, Doppel-Tap = groß (bzw. SS) ===== */
+    td_ae: td_ae { compatible = "zmk,behavior-tap-dance"; label="ä/Ä"; #binding-cells=<0>; bindings = <&umlaut_a>, <&umlaut_A>; tapping-term-ms=<200>; };
+    td_oe: td_oe { compatible = "zmk,behavior-tap-dance"; label="ö/Ö"; #binding-cells=<0>; bindings = <&umlaut_o>, <&umlaut_O>; tapping-term-ms=<200>; };
+    td_ue: td_ue { compatible = "zmk,behavior-tap-dance"; label="ü/Ü"; #binding-cells=<0>; bindings = <&umlaut_u>, <&umlaut_U>; tapping-term-ms=<200>; };
+    td_sz: td_sz { compatible = "zmk,behavior-tap-dance"; label="ß/SS"; #binding-cells=<0>; bindings = <&eszett>, <&macro_SS>; tapping-term-ms=<200>; };
+  };
+
+  /* ===== deine Encoder-Behaviors beibehalten ===== */
+  rgb_encoder: rgb_encoder {
+    compatible = "zmk,behavior-sensor-rotate";
+    #sensor-binding-cells = <0>;
+    bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+  };
+
+  scroll_encoder: scroll_encoder {
+    compatible = "zmk,behavior-sensor-rotate";
+    #sensor-binding-cells = <0>;
+    bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+    tap-ms = <100>;
+  };
+
+  /* ===== deine Combos beibehalten ===== */
+  combos {
+    compatible = "zmk,combos";
+    softoff {
+      bindings = <&soft_off>;
+      key-positions = <1 15 29>;
     };
-
-    scroll_encoder: scroll_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-        tap-ms = <100>;
-    };
-
-    combos {
-        compatible = "zmk,combos";
-
-        softoff {
-            bindings = <&soft_off>;
-            key-positions = <1 15 29>;
-        };
-    };
+  };
 
     keymap {
         compatible = "zmk,keymap";

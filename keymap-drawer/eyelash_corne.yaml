@@ -13,23 +13,23 @@ layers:
   - U
   - Y
   - {t: ;, s: ':'}
-  - '&td_ae'
-  - $$mdi:apple-keyboard-shift$$
-  - {t: A, h: '$$mdi:apple-keyboard-control$$'}
+  - '&deae'
+  - {t: A, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: A, h: LEFT WIN}
   - {t: R, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: S, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: T, h: LGUI}
+  - {t: R, h: '$$mdi:apple-keyboard-option$$'}
+  - T
   - G
   - RGB EFR
   - RGB COLOR HSB(0,0,100)
   - RGB EFF
   - M
-  - {t: N, h: RGUI}
-  - {t: E, h: '$$mdi:apple-keyboard-shift$$'}
+  - N
+  - {t: E, h: '$$mdi:apple-keyboard-control$$'}
   - {t: I, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: O, h: '$$mdi:apple-keyboard-control$$'}
-  - '&td_oe'
-  - '&td_sz'
+  - {t: O, h: RIGHT WIN}
+  - '&deoe'
+  - {t: '$$mdi:apple-keyboard-control$$', h: SYMBOL}
   - Z
   - X
   - C
@@ -42,21 +42,21 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - '&td_ue'
+  - '&deue'
   - LGUI
-  - RAISE
-  - {t: '$$mdi:keyboard-space$$', h: NUM}
-  - {t: '$$mdi:keyboard-return$$', h: NUM}
-  - LOWER
+  - CODING
+  - {t: '$$mdi:keyboard-space$$', h: NUMBER}
+  - {t: '$$mdi:keyboard-return$$', h: NUMBER}
+  - SYMBOL
   - $$mdi:apple-keyboard-option$$
-  RAISE:
+  CODING:
   - {t: '[', s: '{'}
   - '{'
   - (
   - )
   - '}'
   - {t: ']', s: '}'}
-  - RGB HUI
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - <
   - '>'
   - {t: '=', s: +}
@@ -69,9 +69,9 @@ layers:
   - {t: /, s: '?'}
   - \
   - '|'
-  - RGB EFR
-  - RGB COLOR HSB(0,0,100)
-  - RGB EFF
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - $$mdi:mouse-left-click-outline$$
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - '&'
   - ^
   - ':'
@@ -84,28 +84,28 @@ layers:
   - '"'
   - {t: ',', s: <}
   - {t: ., s: '>'}
-  - $$mdi:keyboard-space$$
-  - RGB HUD
+  - $$mdi:volume-off$$
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - $
   - '%'
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-right-bold$$
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-down-bold$$
-  - LGUI
-  - {t: RAISE, type: held}
-  - {t: '$$mdi:keyboard-space$$', h: NUM}
-  - {t: '$$mdi:keyboard-return$$', h: NUM}
-  - LOWER
-  - $$mdi:apple-keyboard-option$$
-  LOWER:
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - INS
+  - $$mdi:backspace-reverse-outline$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  SYMBOL:
   - $$mdi:keyboard-esc$$
   - HOME
   - $$mdi:arrow-up-bold$$
   - END
   - PG UP
   - $$mdi:apple-keyboard-caps$$
-  - RGB HUI
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - F1
   - F2
   - F3
@@ -118,43 +118,43 @@ layers:
   - $$mdi:arrow-right-bold$$
   - PG DN
   - INS
-  - RGB EFR
-  - RGB COLOR HSB(0,0,100)
-  - RGB EFF
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - $$mdi:mouse-left-click-outline$$
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - F7
   - F8
   - F9
   - F10
   - F11
   - F12
-  - $$mdi:apple-keyboard-control$$
+  - {t: '$$mdi:apple-keyboard-control$$', type: held}
   - LGUI
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-shift$$
   - Ctl+$$mdi:arrow-left-bold$$
   - Ctl+$$mdi:arrow-right-bold$$
-  - $$mdi:keyboard-space$$
-  - RGB HUD
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - Sft+$$mdi:arrow-left-bold$$
   - Sft+$$mdi:arrow-down-bold$$
   - Sft+$$mdi:arrow-up-bold$$
   - Sft+$$mdi:arrow-right-bold$$
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - LGUI
-  - {t: RAISE, type: held alternate}
-  - {t: '$$mdi:keyboard-space$$', h: NUM}
-  - {t: '$$mdi:keyboard-return$$', h: NUM}
-  - {t: LOWER, type: held}
-  - $$mdi:apple-keyboard-option$$
-  NUM:
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:keyboard-space$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {type: held alternate}
+  - {t: '$$mdi:transfer$$', type: trans}
+  NUMBER:
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
   - {t: '4', s: $}
   - {t: '5', s: '%'}
   - {t: '6', s: ^}
-  - RGB HUI
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - {t: '7', s: '&'}
   - {t: '8', s: '*'}
   - {t: '9', s: (}
@@ -167,9 +167,9 @@ layers:
   - '}'
   - <
   - '>'
-  - RGB EFR
-  - RGB COLOR HSB(0,0,100)
-  - RGB EFF
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - $$mdi:mouse-left-click-outline$$
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - {t: '=', s: +}
   - +
   - {t: '-', s: _}
@@ -182,20 +182,20 @@ layers:
   - {t: ;, s: ':'}
   - '"'
   - {t: '''', s: '"'}
-  - $$mdi:keyboard-space$$
-  - RGB HUD
+  - $$mdi:volume-off$$
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - '@'
   - '#'
   - '&arrow_func'
   - '&'
   - _
   - {t: \, s: '|'}
-  - LGUI
-  - {t: RAISE, type: held alternate}
-  - {t: '$$mdi:keyboard-space$$', h: NUM, type: held}
-  - {t: '$$mdi:keyboard-return$$', h: NUM, type: held alternate}
-  - {t: LOWER, type: held alternate}
-  - $$mdi:apple-keyboard-option$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
+  - {type: held alternate}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   SYS:
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
@@ -203,7 +203,7 @@ layers:
   - {h: '4', s: '$$mdi:bluetooth-connect$$'}
   - {h: '5', s: '$$mdi:bluetooth-connect$$'}
   - {h: '$$mdi:arrow-down-bold$$', s: '$$mdi:bluetooth-connect$$'}
-  - RGB HUI
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - {h: '$$mdi:arrow-up-bold$$', s: '$$mdi:bluetooth-connect$$'}
   - $$mdi:bluetooth-off$$
   - BT CLR ALL
@@ -216,9 +216,9 @@ layers:
   - RGB SAI
   - RGB SAD
   - RGB EFF
-  - RGB EFR
-  - RGB COLOR HSB(0,0,100)
-  - RGB EFF
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - $$mdi:mouse-left-click-outline$$
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - RGB BRI
   - RGB BRD
   - RGB SPI
@@ -231,20 +231,31 @@ layers:
   - '&bl BL_OFF'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:keyboard-space$$
-  - RGB HUD
+  - $$mdi:volume-off$$
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - $$mdi:progress-download$$
+  - '&studio_unlock'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - LGUI
-  - RAISE
-  - {t: '$$mdi:keyboard-space$$', h: NUM}
-  - {t: '$$mdi:keyboard-return$$', h: NUM}
-  - LOWER
-  - $$mdi:apple-keyboard-option$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
 combos:
+- p: [36, 13]
+  k: {t: '&de_ae_lower', s: '&de_ae_upper'}
+  l: [BASE]
+- p: [36, 22]
+  k: {t: '&de_oe_lower', s: '&de_oe_upper'}
+  l: [BASE]
+- p: [36, 8]
+  k: {t: '&de_ue_lower', s: '&de_ue_upper'}
+  l: [BASE]
+- p: [0, 1]
+  k: {t: NUMBER, h: toggle}
 - p: [1, 15, 29]
   k: '&soft_off'

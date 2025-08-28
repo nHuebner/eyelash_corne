@@ -17,7 +17,7 @@ layers:
   - {t: A, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: A, h: LEFT WIN}
   - {t: R, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: R, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
   - T
   - G
   - RGB EFR
@@ -36,7 +36,7 @@ layers:
   - D
   - V
   - $$mdi:keyboard-space$$
-  - RGB COLOR HSB(120,0,22)
+  - RGB COLOR HSB(120,98,36)
   - K
   - H
   - {t: ',', s: <}
@@ -44,10 +44,10 @@ layers:
   - {t: /, s: '?'}
   - '&deue'
   - LGUI
-  - CODING
+  - {t: '$$mdi:backspace-reverse-outline$$', h: CODING}
   - {t: '$$mdi:keyboard-space$$', h: NUMBER}
-  - {t: '$$mdi:keyboard-return$$', h: NUMBER}
-  - SYMBOL
+  - {t: '$$mdi:keyboard-return$$', h: SYS}
+  - {t: '$$mdi:backspace$$', h: SYMBOL}
   - $$mdi:apple-keyboard-option$$
   CODING:
   - {t: AltGr+8, s: AltGr+*}
@@ -193,7 +193,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - {type: held alternate}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   SYS:
@@ -242,7 +242,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:

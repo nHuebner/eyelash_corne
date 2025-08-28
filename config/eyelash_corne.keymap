@@ -198,10 +198,10 @@
         default_layer {
             display-name = "BASE";
             bindings = <
-&kp TAB       &kp Q            &kp W            &kp F         &kp P      &kp B                                      &rgb_ug RGB_COLOR_HSB(0,0,100)                     &kp J        &kp L            &kp U         &kp Y             &kp SEMICOLON     &deae
-&mt LSHIFT A  &hrm LEFT_WIN A  &hrm LEFT_ALT R  &hrm LCTRL S  &kp T      &kp G                     &rgb_ug RGB_EFR  &rgb_ug RGB_TOG                   &rgb_ug RGB_EFF  &kp M        &kp N            &hrm RCTRL E  &hrm RIGHT_ALT I  &hrm RIGHT_WIN O  &deoe
-&desz         &kp Z            &kp X            &kp C         &kp D      &kp V        &kp SPACE                     &rgb_ug RGB_COLOR_HSB(120,98,36)                   &kp K        &kp H            &kp COMMA     &kp DOT           &kp FSLH          &deue
-                                                &kp LGUI      &lt 1 DEL  &lt 3 SPACE                                                                                   &lt 4 ENTER  &lt 2 BACKSPACE  &kp RALT
+&kp TAB  &kp Q            &kp W            &kp F         &kp P         &kp B                                    &rgb_ug RGB_COLOR_HSB(0,0,100)                     &kp J        &kp L            &kp U         &kp Y             &kp SEMICOLON     &deae
+&kp ESC  &hrm LEFT_WIN A  &hrm LEFT_ALT R  &hrm LCTRL S  &mt LSHIFT T  &kp G                   &rgb_ug RGB_EFR  &rgb_ug RGB_TOG                   &rgb_ug RGB_EFF  &kp M        &mt RSHIFT N     &hrm RCTRL E  &hrm RIGHT_ALT I  &hrm RIGHT_WIN O  &deoe
+&desz    &kp Z            &kp X            &kp C         &kp D         &kp V      &kp SPACE                     &rgb_ug RGB_COLOR_HSB(120,98,36)                   &kp K        &kp H            &kp COMMA     &kp DOT           &kp FSLH          &deue
+                                           &kp LGUI      &lt 1 SPACE   &lt 3 DEL                                                                                   &lt 4 ENTER  &lt 2 BACKSPACE  &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;

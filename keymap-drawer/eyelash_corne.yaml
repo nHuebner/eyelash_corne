@@ -14,7 +14,7 @@ layers:
   - Y
   - {t: ;, s: ':'}
   - '&td_ae'
-  - RGB TOG
+  - $$mdi:apple-keyboard-shift$$
   - {t: A, h: '$$mdi:apple-keyboard-control$$'}
   - {t: R, h: '$$mdi:apple-keyboard-option$$'}
   - {t: S, h: '$$mdi:apple-keyboard-shift$$'}
@@ -63,12 +63,12 @@ layers:
   - +
   - '~'
   - {t: '`', s: '~'}
-  - RGB TOG
   - '!'
   - {t: '-', s: _}
   - '*'
   - {t: /, s: '?'}
-  - {t: \, s: '|'}
+  - \
+  - '|'
   - RGB EFR
   - RGB COLOR HSB(0,0,100)
   - RGB EFF
@@ -112,12 +112,12 @@ layers:
   - F4
   - F5
   - F6
-  - RGB TOG
   - $$mdi:keyboard-tab$$
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
   - PG DN
+  - INS
   - RGB EFR
   - RGB COLOR HSB(0,0,100)
   - RGB EFF
@@ -161,21 +161,21 @@ layers:
   - {t: '0', s: )}
   - (
   - )
-  - RGB TOG
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
   - '{'
   - '}'
   - <
+  - '>'
   - RGB EFR
   - RGB COLOR HSB(0,0,100)
   - RGB EFF
-  - '>'
   - {t: '=', s: +}
   - +
   - {t: '-', s: _}
   - '*'
   - {t: /, s: '?'}
+  - '%'
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - ':'
@@ -186,7 +186,7 @@ layers:
   - RGB HUD
   - '@'
   - '#'
-  - ^
+  - '&arrow_func'
   - '&'
   - _
   - {t: \, s: '|'}

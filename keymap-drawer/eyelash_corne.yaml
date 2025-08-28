@@ -7,7 +7,7 @@ layers:
   - F
   - P
   - B
-  - RGB HUI
+  - RGB COLOR HSB(0,0,100)
   - J
   - L
   - U
@@ -21,7 +21,7 @@ layers:
   - T
   - G
   - RGB EFR
-  - RGB COLOR HSB(0,0,100)
+  - RGB TOG
   - RGB EFF
   - M
   - N
@@ -29,14 +29,14 @@ layers:
   - {t: I, h: '$$mdi:apple-keyboard-option$$'}
   - {t: O, h: RIGHT WIN}
   - '&deoe'
-  - {t: '$$mdi:apple-keyboard-control$$', h: SYMBOL}
+  - '&desz'
   - Z
   - X
   - C
   - D
   - V
   - $$mdi:keyboard-space$$
-  - RGB HUD
+  - RGB COLOR HSB(120,0,22)
   - K
   - H
   - {t: ',', s: <}
@@ -50,34 +50,34 @@ layers:
   - SYMBOL
   - $$mdi:apple-keyboard-option$$
   CODING:
-  - {t: '[', s: '{'}
-  - '{'
+  - {t: AltGr+8, s: AltGr+*}
+  - {t: AltGr+7, s: AltGr+&}
   - (
   - )
-  - '}'
-  - {t: ']', s: '}'}
-  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
-  - <
-  - '>'
+  - {t: AltGr+0, s: AltGr+)}
+  - {t: AltGr+9, s: AltGr+(}
+  - {h: '$$mdi:arrow-down-bold$$', s: '$$mdi:bluetooth-connect$$'}
+  - \
+  - Sft+\
   - {t: '=', s: +}
   - +
-  - '~'
-  - {t: '`', s: '~'}
+  - '&tilde_de'
+  - '&backtick_de'
   - '!'
   - {t: '-', s: _}
   - '*'
   - {t: /, s: '?'}
-  - \
-  - '|'
-  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
-  - $$mdi:mouse-left-click-outline$$
-  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - {t: AltGr+-, s: AltGr+_}
+  - AltGr+\
+  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
+  - '&studio_unlock'
+  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
   - '&'
   - ^
   - ':'
   - {t: ;, s: ':'}
   - '?'
-  - '@'
+  - AltGr+Q
   - _
   - '#'
   - {t: '''', s: '"'}
@@ -85,7 +85,7 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - $$mdi:volume-off$$
-  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - {h: '$$mdi:arrow-up-bold$$', s: '$$mdi:bluetooth-connect$$'}
   - $
   - '%'
   - $$mdi:arrow-left-bold$$
@@ -127,7 +127,7 @@ layers:
   - F10
   - F11
   - F12
-  - {t: '$$mdi:apple-keyboard-control$$', type: held}
+  - $$mdi:apple-keyboard-control$$
   - LGUI
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-shift$$
@@ -145,7 +145,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {type: held alternate}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   NUMBER:
   - {t: '1', s: '!'}
@@ -161,12 +161,12 @@ layers:
   - {t: '0', s: )}
   - (
   - )
-  - {t: '[', s: '{'}
-  - {t: ']', s: '}'}
-  - '{'
-  - '}'
-  - <
-  - '>'
+  - {t: AltGr+8, s: AltGr+*}
+  - {t: AltGr+9, s: AltGr+(}
+  - {t: AltGr+7, s: AltGr+&}
+  - {t: AltGr+0, s: AltGr+)}
+  - \
+  - Sft+\
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
@@ -184,11 +184,11 @@ layers:
   - {t: '''', s: '"'}
   - $$mdi:volume-off$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - '@'
+  - AltGr+Q
   - '#'
   - '&arrow_func'
-  - '&'
-  - _
+  - '&arrow_thin'
+  - '&scope_sep'
   - {t: \, s: '|'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -223,14 +223,14 @@ layers:
   - RGB BRD
   - RGB SPI
   - RGB SPD
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - '&bl BL_TOG'
   - '&bl BL_INC'
   - '&bl BL_DEC'
   - '&bl BL_CYCLE'
   - '&bl BL_SET 50'
   - '&bl BL_OFF'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:volume-off$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - $$mdi:progress-download$$
@@ -246,16 +246,5 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
-- p: [36, 13]
-  k: {t: '&de_ae_lower', s: '&de_ae_upper'}
-  l: [BASE]
-- p: [36, 22]
-  k: {t: '&de_oe_lower', s: '&de_oe_upper'}
-  l: [BASE]
-- p: [36, 8]
-  k: {t: '&de_ue_lower', s: '&de_ue_upper'}
-  l: [BASE]
-- p: [0, 1]
-  k: {t: NUMBER, h: toggle}
 - p: [1, 15, 29]
   k: '&soft_off'

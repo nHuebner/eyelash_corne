@@ -75,7 +75,15 @@
        DE-Layout:  ä = '    Ä = Shift+'    → SQT / LS(SQT)
                    ö = ;    Ö = Shift+;    → SEMI / LS(SEMI)
                    ü = [    Ü = Shift+[    → LBKT / LS(LBKT)
-                   ß = -    SS (Doppeltap) → MINUS / Macro "SS"   */
+                   ß = -    SS (Doppeltap) → MINUS / Macro "SS"   
+                     = \ 
+                   
+                   
+                   
+                   
+                   
+                   
+        */
 
         macro_SS: macro_SS {
             compatible = "zmk,behavior-macro";
@@ -170,10 +178,10 @@
     combos {
         compatible = "zmk,combos";
 
-        softoff {
+        /*softoff {
             bindings = <&soft_off>;
             key-positions = <1 15 29>;
-        };
+        };*/
 
         /* (optional) deine frühere layer_3 Combo:
        combo_layer_3 {
@@ -195,19 +203,30 @@
 
         /* ================= BASE (Deutsch + ergonomisch) ================= */
 
+        // ----------------------------------------------------------------------------------------------------
+        // | TAB |  Q  |  W  |  F  |  P  |  B  |     |     |  G  |     |  J  |  L   |  U  |  Y  |  ;  |  Ä  |
+        // | ESC |  A  |  R  |  S  |  T  |  G  |     |  G  |  G  |  G  |  M  |  N   |  E  |  I  |  O  |  Ö  |
+        // |  ß  |  Z  |  X  |  C  |  D  |  V  | SPC |     |  G  |     |  K  |  H   |  ,  |  .  |  /  |  Ü  |
+        //                   | GUI | LWR | SPC |     |     |     |     | ENT | RSE  | ALT |
+
         default_layer {
             display-name = "BASE";
             bindings = <
-&kp TAB  &kp Q            &kp W            &kp F         &kp P         &kp B                                    &rgb_ug RGB_COLOR_HSB(0,0,100)                     &kp J        &kp L            &kp U         &kp Y             &kp SEMICOLON     &deae
+&kp TAB  &kp Q            &kp W            &kp F         &kp P         &kp B                                    &rgb_ug RGB_COLOR_HSB(0,0,100)                     &kp J        &kp L            &kp U         &kp Y             &kp LS(COMMA)     &deae
 &kp ESC  &hrm LEFT_WIN A  &hrm LEFT_ALT R  &hrm LCTRL S  &mt LSHIFT T  &kp G                   &rgb_ug RGB_EFR  &rgb_ug RGB_TOG                   &rgb_ug RGB_EFF  &kp M        &mt RSHIFT N     &hrm RCTRL E  &hrm RIGHT_ALT I  &hrm RIGHT_WIN O  &deoe
-&desz    &kp Z            &kp X            &kp C         &kp D         &kp V      &kp SPACE                     &rgb_ug RGB_COLOR_HSB(120,98,36)                   &kp K        &kp H            &kp COMMA     &kp DOT           &kp FSLH          &deue
-                                           &kp LGUI      &lt 1 SPACE   &lt 3 DEL                                                                                   &lt 4 ENTER  &lt 2 BACKSPACE  &kp RALT
+&desz    &kp Z            &kp X            &kp C         &kp D         &kp V      &kp SPACE                     &rgb_ug RGB_COLOR_HSB(120,98,36)                   &kp K        &kp H            &kp COMMA     &kp DOT           &kp LS(N7)        &deue
+                                           &kp LSHIFT    &lt 1 SPACE   &lt 2 DEL                                                                                   &lt 4 ENTER  &lt 3 BACKSPACE  &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         /* ================= CODING (RAISE inhaltlich) ================= */
+        // -------------------------------------------------------------------------------------------------------
+        // |  [  |  {  |  (  |  )  |  }  |  ]  |     |     |     |  G  |     |  <  |  >  |  =  |  +  |  ~  |  `  |
+        // |  !  |  -  |  *  |  /  |  \  |  |  |     |     |  G  |  G  |  G  |  &  |  ^  |  :  |  ;  |  ?  |  @  |
+        // |  _  |  #  |  '  |  "  |  ,  |  .  | SPC |     |     |  G  |     |  $  |  %  |  => |  \  |  -> |  :: |
+        //                   |     |     |     |     |     |     |     |     |     |     |     |
 
         lower_layer {
             display-name = "CODING";
@@ -215,10 +234,29 @@
             /* DE-Host-sichere Klammern/Operatoren + deine festen RGB/SPACE/MMV-Slots */
 
             bindings = <
-&kp RA(N8)       &kp RA(N7)  &kp LPAR      &kp RPAR   &kp RA(N0)     &kp RA(N9)                                            &bt BT_NXT                    &kp NON_US_BACKSLASH  &kp LS(NON_US_BACKSLASH)  &kp EQUAL  &kp PLUS   &tilde_de  &backtick_de
-&kp EXCLAMATION  &kp MINUS   &kp ASTERISK  &kp SLASH  &kp RA(MINUS)  &kp RA(NON_US_BACKSLASH)                &bt BT_SEL 0  &studio_unlock  &bt BT_SEL 1  &kp AMPS              &kp CARET                 &kp COLON  &kp SEMI   &kp QMARK  &kp RA(Q)
-&kp UNDER        &kp HASH    &kp SQT       &kp DQT    &kp COMMA      &kp DOT                   &kp C_MUTE                  &bt BT_PRV                    &kp DLLR              &kp PRCNT                 &kp LEFT   &kp RIGHT  &kp UP     &kp DOWN
-                                           &trans     &trans         &trans                                                                              &kp INS               &kp DEL                   &trans
+&kp RA(N8)     &kp RA(N7)  &kp LS(N8)    &kp LS(N9) &kp RA(N0)     &kp RA(N9)                                            &bt BT_NXT                    &kp NON_US_BACKSLASH  &kp LS(NON_US_BACKSLASH)  &kp LS(N0)  &kp PLUS      &tilde_de    &backtick_de
+&kp LS(1)      &kp MINUS   &kp LS(RBKT)  &kp LS(N7) &kp RA(MINUS)  &kp RA(NON_US_BACKSLASH)                &bt BT_SEL 0  &studio_unlock  &bt BT_SEL 1  &kp LS(N6)            &kp CARET                 &kp LS(DOT) &kp LS(MINUS) &kp QMARK    &kp RA(Q)
+&kp LS(MINUS)  &kp HASH    &kp LS(HASH)  &kp LS(N2) &kp COMMA      &kp DOT                   &kp C_MUTE                  &bt BT_PRV                    &kp LS(N4)            &kp LS(N5)                &arrow_func &kp RA(MINUS) &arrow_thin  &scope_sep
+                                         &trans     &trans         &trans                                                                              &kp INS               &kp DEL                   &trans
+            >;
+
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        /* ================= NUMBER (Num/Operatoren + Macros) ================= */
+        // -------------------------------------------------------------------------------------------------------
+        // |     |     |     |     |     |     |     |     |     |  G  |     |     |  7  |  8  |  9  | BSPC |     |
+        // |     |     |     |     |     |     |     |     |  G  |  G  |  G  |     |  4  |  5  |  6  | TAB  |     |
+        // |     |     |     |     |     |     | SPC |     |     |  G  |     |  .  |  1  |  2  |  3  | RTAB |     |
+        //                   |     |     |     |     |     |     |     |     |     |  0  |  0  |
+
+        num_layer {
+            display-name = "NUMBER";
+            bindings = <
+&trans  &trans  &kp LC(LEFT)  &kp LS(UP)    &kp LC(RIGHT)  &trans                                &mmv MOVE_UP                     &trans   &kp N7   &kp N8   &kp N9   &kp BACKSPACE &trans
+&trans  &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(RIGHT)  &trans                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &transL  &kp N4   &kp N5   &kp N6   &kp TAB       &trans
+&trans  &trans  &trans        &trans        &trans         &trans  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp DOT  &kp N1   &kp N2   &kp N3   &kp LS(TAB)   &trans
+                              &trans        &trans         &trans                                                                 &trans   &kp N0   &kp N0
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -236,21 +274,7 @@
             >;
 
             sensor-bindings = <&scroll_encoder>;
-        };
-
-        /* ================= NUMBER (Num/Operatoren + Macros) ================= */
-
-        num_layer {
-            display-name = "NUMBER";
-            bindings = <
-&kp N1      &kp N2      &kp N3      &kp N4      &kp N5                &kp N6                                                  &mmv MOVE_UP                     &kp N7     &kp N8    &kp N9       &kp N0       &kp LPAR    &kp RPAR
-&kp RA(N8)  &kp RA(N9)  &kp RA(N7)  &kp RA(N0)  &kp NON_US_BACKSLASH  &kp LS(NON_US_BACKSLASH)                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp EQUAL  &kp PLUS  &kp MINUS    &kp ASTRK    &kp FSLH    &kp PRCNT
-&kp COMMA   &kp DOT     &kp COLON   &kp SEMI    &kp DQT               &kp SQT                   &kp C_MUTE                    &mmv MOVE_DOWN                   &kp RA(Q)  &kp HASH  &arrow_func  &arrow_thin  &scope_sep  &kp BSLH
-                                    &trans      &trans                &trans                                                                                   &trans     &trans    &trans
-            >;
-
-            sensor-bindings = <&scroll_encoder>;
-        };
+        };        
 
         /* ================= SYS (Bluetooth / Output / RGB / Backlight) ================= */
 

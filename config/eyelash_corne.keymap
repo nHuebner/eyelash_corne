@@ -182,7 +182,6 @@
             bindings = <&soft_off>;
             key-positions = <1 15 29>;
         };*/
-
         /* (optional) deine frühere layer_3 Combo:
        combo_layer_3 {
          timeout-ms = <25>;
@@ -202,7 +201,6 @@
         compatible = "zmk,keymap";
 
         /* ================= BASE (Deutsch + ergonomisch) ================= */
-
         // ----------------------------------------------------------------------------------------------------
         // | TAB |  Q  |  W  |  F  |  P  |  B  |     |     |  G  |     |  J  |  L   |  U  |  Y  |  ;  |  Ä  |
         // | ESC |  A  |  R  |  S  |  T  |  G  |     |  G  |  G  |  G  |  M  |  N   |  E  |  I  |  O  |  Ö  |
@@ -234,10 +232,10 @@
             /* DE-Host-sichere Klammern/Operatoren + deine festen RGB/SPACE/MMV-Slots */
 
             bindings = <
-&kp RA(N8)     &kp RA(N7)  &kp LS(N8)    &kp LS(N9) &kp RA(N0)     &kp RA(N9)                                            &bt BT_NXT                    &kp NON_US_BACKSLASH  &kp LS(NON_US_BACKSLASH)  &kp LS(N0)  &kp PLUS      &tilde_de    &backtick_de
-&kp LS(1)      &kp MINUS   &kp LS(RBKT)  &kp LS(N7) &kp RA(MINUS)  &kp RA(NON_US_BACKSLASH)                &bt BT_SEL 0  &studio_unlock  &bt BT_SEL 1  &kp LS(N6)            &kp CARET                 &kp LS(DOT) &kp LS(MINUS) &kp QMARK    &kp RA(Q)
-&kp LS(MINUS)  &kp HASH    &kp LS(HASH)  &kp LS(N2) &kp COMMA      &kp DOT                   &kp C_MUTE                  &bt BT_PRV                    &kp LS(N4)            &kp LS(N5)                &arrow_func &kp RA(MINUS) &arrow_thin  &scope_sep
-                                         &trans     &trans         &trans                                                                              &kp INS               &kp DEL                   &trans
+&kp RA(N8)     &kp RA(N7)  &kp LS(N8)    &kp LS(N9)  &kp RA(N0)     &kp RA(N9)                                            &bt BT_NXT                    &kp NON_US_BACKSLASH  &kp LS(NON_US_BACKSLASH)  &kp LS(N0)   &kp PLUS       &tilde_de    &backtick_de
+&kp LS(1)      &kp MINUS   &kp LS(RBKT)  &kp LS(N7)  &kp RA(MINUS)  &kp RA(NON_US_BACKSLASH)                &bt BT_SEL 0  &studio_unlock  &bt BT_SEL 1  &kp LS(N6)            &kp CARET                 &kp LS(DOT)  &kp LS(MINUS)  &kp QMARK    &kp RA(Q)
+&kp LS(MINUS)  &kp HASH    &kp LS(HASH)  &kp LS(N2)  &kp COMMA      &kp DOT                   &kp C_MUTE                  &bt BT_PRV                    &kp LS(N4)            &kp LS(N5)                &arrow_func  &kp RA(MINUS)  &arrow_thin  &scope_sep
+                                         &trans      &trans         &kp BSPC                                                                            &kp INS               &kp DEL                   &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -253,10 +251,10 @@
         num_layer {
             display-name = "NUMBER";
             bindings = <
-&trans  &trans  &kp LC(LEFT)  &kp LS(UP)    &kp LC(RIGHT)  &trans                                &mmv MOVE_UP                     &trans   &kp N7   &kp N8   &kp N9   &kp BACKSPACE &trans
-&trans  &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(RIGHT)  &trans                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &transL  &kp N4   &kp N5   &kp N6   &kp TAB       &trans
-&trans  &trans  &trans        &trans        &trans         &trans  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp DOT  &kp N1   &kp N2   &kp N3   &kp LS(TAB)   &trans
-                              &trans        &trans         &trans                                                                 &trans   &kp N0   &kp N0
+&trans  &trans  &kp LC(LEFT)  &kp LS(UP)    &kp LC(RIGHT)  &trans                                &mmv MOVE_UP                     &trans   &kp N7  &kp N8  &kp N9  &kp BACKSPACE  &trans
+&trans  &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(RIGHT)  &trans                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &trans   &kp N4  &kp N5  &kp N6  &kp TAB        &trans
+&trans  &trans  &trans        &trans        &trans         &trans  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp DOT  &kp N1  &kp N2  &kp N3  &kp LS(TAB)    &trans
+                              &trans        &trans         &trans                                                                 &trans   &kp N0  &kp N0
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -274,7 +272,7 @@
             >;
 
             sensor-bindings = <&scroll_encoder>;
-        };        
+        };
 
         /* ================= SYS (Bluetooth / Output / RGB / Backlight) ================= */
 

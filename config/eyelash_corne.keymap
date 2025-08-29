@@ -211,7 +211,7 @@
             display-name = "BASE";
             bindings = <
 &kp TAB  &kp Q            &kp W            &kp F         &kp P         &kp B                                    &rgb_ug RGB_COLOR_HSB(0,0,100)                     &kp J        &kp L            &kp U         &kp Y             &kp LS(COMMA)     &deae
-&kp ESC  &hrm LEFT_WIN A  &hrm LEFT_ALT R  &hrm LCTRL S  &mt LSHIFT T  &kp G                   &rgb_ug RGB_EFR  &rgb_ug RGB_TOG                   &rgb_ug RGB_EFF  &kp M        &mt RSHIFT N     &hrm RCTRL E  &hrm RIGHT_ALT I  &hrm RIGHT_WIN O  &deoe
+&kp ESC  &hrm LEFT_WIN A  &hrm LEFT_ALT R  &hrm LCTRL S  &hrm LSHIFT T &kp G                   &rgb_ug RGB_EFR  &rgb_ug RGB_TOG                   &rgb_ug RGB_EFF  &kp M        &hrm RSHIFT N    &hrm RCTRL E  &hrm RIGHT_ALT I  &hrm RIGHT_WIN O  &deoe
 &desz    &kp Z            &kp X            &kp C         &kp D         &kp V      &kp SPACE                     &rgb_ug RGB_COLOR_HSB(120,98,36)                   &kp K        &kp H            &kp COMMA     &kp DOT           &kp LS(N7)        &deue
                                            &kp LSHIFT    &lt 1 SPACE   &lt 2 DEL                                                                                   &lt 4 ENTER  &lt 3 BACKSPACE  &kp RALT
             >;

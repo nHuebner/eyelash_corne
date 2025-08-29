@@ -12,7 +12,7 @@ layers:
   - L
   - U
   - Y
-  - {t: ;, s: ':'}
+  - {t: 'Sft+,', s: Sft+<}
   - '&deae'
   - $$mdi:keyboard-esc$$
   - {t: A, h: LEFT WIN}
@@ -41,9 +41,9 @@ layers:
   - H
   - {t: ',', s: <}
   - {t: ., s: '>'}
-  - {t: /, s: '?'}
+  - {t: Sft+7, s: Sft+&}
   - '&deue'
-  - LGUI
+  - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:keyboard-space$$', h: CODING}
   - {t: '$$mdi:backspace-reverse-outline$$', h: NUMBER}
   - {t: '$$mdi:keyboard-return$$', h: SYS}
@@ -52,52 +52,101 @@ layers:
   CODING:
   - {t: AltGr+8, s: AltGr+*}
   - {t: AltGr+7, s: AltGr+&}
-  - (
-  - )
+  - {t: Sft+8, s: Sft+*}
+  - {t: Sft+9, s: Sft+(}
   - {t: AltGr+0, s: AltGr+)}
   - {t: AltGr+9, s: AltGr+(}
   - {h: '$$mdi:arrow-down-bold$$', s: '$$mdi:bluetooth-connect$$'}
   - \
   - Sft+\
-  - {t: '=', s: +}
+  - {t: Sft+0, s: Sft+)}
   - +
   - '&tilde_de'
   - '&backtick_de'
-  - '!'
+  - Sft+1
   - {t: '-', s: _}
-  - '*'
-  - {t: /, s: '?'}
+  - {t: 'Sft+]', s: 'Sft+}'}
+  - {t: Sft+7, s: Sft+&}
   - {t: AltGr+-, s: AltGr+_}
   - AltGr+\
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - '&studio_unlock'
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
-  - '&'
+  - {t: Sft+6, s: Sft+^}
   - ^
-  - ':'
-  - {t: ;, s: ':'}
+  - {t: Sft+., s: Sft+>}
+  - {t: Sft+-, s: Sft+_}
   - '?'
   - AltGr+Q
-  - _
+  - {t: Sft+-, s: Sft+_}
   - '#'
-  - {t: '''', s: '"'}
-  - '"'
+  - Sft+#
+  - {t: Sft+2, s: Sft+@}
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - $$mdi:volume-off$$
   - {h: '$$mdi:arrow-up-bold$$', s: '$$mdi:bluetooth-connect$$'}
-  - $
-  - '%'
-  - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-right-bold$$
-  - $$mdi:arrow-up-bold$$
-  - $$mdi:arrow-down-bold$$
+  - {t: Sft+4, s: Sft+$}
+  - {t: Sft+5, s: Sft+%}
+  - '&arrow_func'
+  - {t: AltGr+-, s: AltGr+_}
+  - '&arrow_thin'
+  - '&scope_sep'
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - INS
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
+  NUMBER:
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - Ctl+$$mdi:arrow-left-bold$$
+  - Sft+$$mdi:arrow-up-bold$$
+  - Ctl+$$mdi:arrow-right-bold$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '7', s: '&'}
+  - {t: '8', s: '*'}
+  - {t: '9', s: (}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - Sft+$$mdi:arrow-left-bold$$
+  - Sft+$$mdi:arrow-down-bold$$
+  - Sft+$$mdi:arrow-right-bold$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - $$mdi:mouse-left-click-outline$$
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - '&transL'
+  - {t: '4', s: $}
+  - {t: '5', s: '%'}
+  - {t: '6', s: ^}
+  - $$mdi:keyboard-tab$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:volume-off$$
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - {t: ., s: '>'}
+  - {t: '1', s: '!'}
+  - {t: '2', s: '@'}
+  - {t: '3', s: '#'}
+  - $$mdi:keyboard-tab-reverse$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '0', s: )}
+  - {t: '0', s: )}
   SYMBOL:
   - $$mdi:keyboard-esc$$
   - HOME
@@ -146,55 +195,6 @@ layers:
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
-  NUMBER:
-  - {t: '1', s: '!'}
-  - {t: '2', s: '@'}
-  - {t: '3', s: '#'}
-  - {t: '4', s: $}
-  - {t: '5', s: '%'}
-  - {t: '6', s: ^}
-  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
-  - {t: '7', s: '&'}
-  - {t: '8', s: '*'}
-  - {t: '9', s: (}
-  - {t: '0', s: )}
-  - (
-  - )
-  - {t: AltGr+8, s: AltGr+*}
-  - {t: AltGr+9, s: AltGr+(}
-  - {t: AltGr+7, s: AltGr+&}
-  - {t: AltGr+0, s: AltGr+)}
-  - \
-  - Sft+\
-  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
-  - $$mdi:mouse-left-click-outline$$
-  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - {t: '=', s: +}
-  - +
-  - {t: '-', s: _}
-  - '*'
-  - {t: /, s: '?'}
-  - '%'
-  - {t: ',', s: <}
-  - {t: ., s: '>'}
-  - ':'
-  - {t: ;, s: ':'}
-  - '"'
-  - {t: '''', s: '"'}
-  - $$mdi:volume-off$$
-  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - AltGr+Q
-  - '#'
-  - '&arrow_func'
-  - '&arrow_thin'
-  - '&scope_sep'
-  - {t: \, s: '|'}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   SYS:
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
@@ -245,6 +245,3 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-combos:
-- p: [1, 15, 29]
-  k: '&soft_off'

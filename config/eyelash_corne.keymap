@@ -125,21 +125,21 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             label = "ARROW_FUNC";
-            bindings = <&kp EQUAL &kp GT>;           /* "=>" */
+            bindings = <&kp LS(N0) &kp LS(NON_US_BACKSLASH)>;           /* "=>" */
         };
 
         arrow_thin: arrow_thin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             label = "ARROW_THIN";
-            bindings = <&kp MINUS &kp GT>;           /* "->" */
+            bindings = <&kp MINUS &kp LS(NON_US_BACKSLASH)>;           /* "->" */
         };
 
         scope_sep: scope_sep {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             label = "SCOPE_SEP";
-            bindings = <&kp LS(SEMICOLON) &kp LS(SEMICOLON)>; /* "::" */
+            bindings = <&kp LS(DOT) &kp LS(DOT)>; /* "::" */
         };
 
         /* ── DE-sichere ` und ~ ── */

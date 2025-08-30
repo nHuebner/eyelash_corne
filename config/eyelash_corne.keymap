@@ -153,7 +153,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             label = "ARROW_THIN";
-            bindings = <&kp MINUS &kp LS(NUBS)>;           /* "->" */
+            bindings = <&kp FSLH &kp LS(NUBS)>;           /* "->" */
         };
 
         scope_sep: scope_sep {
@@ -169,14 +169,14 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             label = "BTICK_DE";
-            bindings = <&kp LS(SQT) &kp SPACE>;      /* Shift+´ , dann Space */
+            bindings = <&kp LS(EQUAL) &kp SPACE>;      /* Shift+´ , dann Space */
         };
 
         tilde_de: tilde_de {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             label = "TILDE_DE";
-            bindings = <&kp RA(PLUS)>;               /* AltGr + +  → ~ */
+            bindings = <&kp RA(RBKT)>;               /* AltGr + +  → ~ */
         };
     };
 

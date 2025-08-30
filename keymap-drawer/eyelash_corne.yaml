@@ -11,7 +11,7 @@ layers:
   - J
   - L
   - U
-  - Y
+  - Z
   - {t: 'Sft+,', s: Sft+<}
   - '&deae'
   - $$mdi:keyboard-esc$$
@@ -30,7 +30,7 @@ layers:
   - {t: O, h: RIGHT WIN}
   - '&deoe'
   - '&desz'
-  - Z
+  - Y
   - X
   - C
   - D
@@ -57,30 +57,30 @@ layers:
   - {t: AltGr+0, s: AltGr+)}
   - {t: AltGr+9, s: AltGr+(}
   - {h: '$$mdi:arrow-down-bold$$', s: '$$mdi:bluetooth-connect$$'}
-  - \
-  - Sft+\
+  - NUBS
+  - Sft+NUBS
   - {t: Sft+0, s: Sft+)}
-  - +
+  - {t: ']', s: '}'}
   - '&tilde_de'
   - '&backtick_de'
-  - Sft+1
-  - {t: '-', s: _}
+  - {t: Sft+1, s: Sft+!}
+  - {t: /, s: '?'}
   - {t: 'Sft+]', s: 'Sft+}'}
   - {t: Sft+7, s: Sft+&}
   - {t: AltGr+-, s: AltGr+_}
-  - AltGr+\
+  - AltGr+NUBS
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - '&studio_unlock'
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
   - {t: Sft+6, s: Sft+^}
-  - ^
+  - {t: '`', s: '~'}
   - {t: Sft+., s: Sft+>}
+  - {t: 'Sft+,', s: Sft+<}
   - {t: Sft+-, s: Sft+_}
-  - '?'
   - AltGr+Q
-  - {t: Sft+-, s: Sft+_}
-  - '#'
-  - Sft+#
+  - {t: Sft+/, s: 'Sft+?'}
+  - {t: \, s: '|'}
+  - {t: Sft+\, s: Sft+|}
   - {t: Sft+2, s: Sft+@}
   - {t: ',', s: <}
   - {t: ., s: '>'}

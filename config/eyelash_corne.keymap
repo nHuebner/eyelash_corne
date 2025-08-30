@@ -75,15 +75,7 @@
        DE-Layout:  ä = '    Ä = Shift+'    → SQT / LS(SQT)
                    ö = ;    Ö = Shift+;    → SEMI / LS(SEMI)
                    ü = [    Ü = Shift+[    → LBKT / LS(LBKT)
-                   ß = -    SS (Doppeltap) → MINUS / Macro "SS"   
-                     = \ 
-                   
-                   
-                   
-                   
-                   
-                   
-        */
+                   ß = -    SS (Doppeltap) → MINUS / Macro "SS"   */
 
         macro_SS: macro_SS {
             compatible = "zmk,behavior-macro";
@@ -119,20 +111,49 @@
             bindings = <&kp MINUS>, <&macro_SS>;
         };
 
-        /* ── Macros: =>, ->, :: ── */
+        /* ── Macros: =>, ->, ::, ||, ??, ===, !== ── */
+
+        or_comp: or_comp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "OR COMP";
+            bindings = <&kp RA(NUBS) &kp RA(NUBS)>;           /* "||" */
+        };
+
+        nullish_comp: nullish_comp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "NULLISH COMP";
+            bindings = <&kp LS(MINUS) &kp LS(MINUS)>;         /* "??" */
+        };
+
+        
+        strict_equal: strict_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "STRICT EQUAL";
+            bindings = <&kp LS(N0) &kp LS(N0) &kp LS(N0)>;    /* "===" */
+        };
+        
+        strict_unequal: strict_unequal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "STRICT UNEQUAL";
+            bindings = <&kp LS(N1) &kp LS(N0) &kp LS(N0)>;    /* "!==" */
+        };
 
         arrow_func: arrow_func {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             label = "ARROW_FUNC";
-            bindings = <&kp LS(N0) &kp LS(NON_US_BACKSLASH)>;           /* "=>" */
+            bindings = <&kp LS(N0) &kp LS(NUBS)>;           /* "=>" */
         };
 
         arrow_thin: arrow_thin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             label = "ARROW_THIN";
-            bindings = <&kp MINUS &kp LS(NON_US_BACKSLASH)>;           /* "->" */
+            bindings = <&kp MINUS &kp LS(NUBS)>;           /* "->" */
         };
 
         scope_sep: scope_sep {
@@ -210,9 +231,9 @@
         default_layer {
             display-name = "BASE";
             bindings = <
-&kp TAB  &kp Q            &kp W            &kp F         &kp P         &kp B                                    &rgb_ug RGB_COLOR_HSB(0,0,100)                     &kp J        &kp L            &kp U         &kp Y             &kp LS(COMMA)     &deae
+&kp TAB  &kp Q            &kp W            &kp F         &kp P         &kp B                                    &rgb_ug RGB_COLOR_HSB(0,0,100)                     &kp J        &kp L            &kp U         &kp Z             &kp LS(COMMA)     &deae
 &kp ESC  &hrm LEFT_WIN A  &hrm LEFT_ALT R  &hrm LCTRL S  &hrm LSHIFT T &kp G                   &rgb_ug RGB_EFR  &rgb_ug RGB_TOG                   &rgb_ug RGB_EFF  &kp M        &hrm RSHIFT N    &hrm RCTRL E  &hrm RIGHT_ALT I  &hrm RIGHT_WIN O  &deoe
-&desz    &kp Z            &kp X            &kp C         &kp D         &kp V      &kp SPACE                     &rgb_ug RGB_COLOR_HSB(120,98,36)                   &kp K        &kp H            &kp COMMA     &kp DOT           &kp LS(N7)        &deue
+&desz    &kp Y            &kp X            &kp C         &kp D         &kp V      &kp SPACE                     &rgb_ug RGB_COLOR_HSB(120,98,36)                   &kp K        &kp H            &kp COMMA     &kp DOT           &kp LS(N7)        &deue
                                            &kp LSHIFT    &lt 1 SPACE   &lt 2 DEL                                                                                   &lt 4 ENTER  &lt 3 BACKSPACE  &kp RALT
             >;
 
@@ -232,10 +253,10 @@
             /* DE-Host-sichere Klammern/Operatoren + deine festen RGB/SPACE/MMV-Slots */
 
             bindings = <
-&kp RA(N8)     &kp RA(N7)  &kp LS(N8)    &kp LS(N9)  &kp RA(N0)     &kp RA(N9)                                            &bt BT_NXT                    &kp NON_US_BACKSLASH  &kp LS(NON_US_BACKSLASH)  &kp LS(N0)   &kp PLUS       &tilde_de    &backtick_de
-&kp LS(1)      &kp MINUS   &kp LS(RBKT)  &kp LS(N7)  &kp RA(MINUS)  &kp RA(NON_US_BACKSLASH)                &bt BT_SEL 0  &studio_unlock  &bt BT_SEL 1  &kp LS(N6)            &kp CARET                 &kp LS(DOT)  &kp LS(MINUS)  &kp QMARK    &kp RA(Q)
-&kp LS(MINUS)  &kp HASH    &kp LS(HASH)  &kp LS(N2)  &kp COMMA      &kp DOT                   &kp C_MUTE                  &bt BT_PRV                    &kp LS(N4)            &kp LS(N5)                &arrow_func  &kp RA(MINUS)  &arrow_thin  &scope_sep
-                                         &trans      &trans         &kp BSPC                                                                            &kp INS               &kp DEL                   &trans
+&kp RA(N8)     &kp RA(N7)  &kp LS(N8)    &kp LS(N9)  &kp RA(N0)     &kp RA(N9)                                            &bt BT_NXT                    &kp NUBS    &kp LS(NUBS)  &kp LS(N0)   &kp RBKT       &tilde_de        &backtick_de
+&kp LS(N1)     &kp FSLH    &kp LS(RBKT)  &kp LS(N7)  &kp RA(MINUS)  &kp RA(NUBS)                            &bt BT_SEL 0  &studio_unlock  &bt BT_SEL 1  &kp LS(N6)  &kp GRAVE     &kp LS(DOT)  &kp LS(COMMA)  &kp LS(MINUS)    &kp RA(Q)
+&kp LS(FSLH)   &kp BSLH    &kp LS(BSLH)  &kp LS(N2)  &kp COMMA      &kp DOT                   &kp C_MUTE                  &bt BT_PRV                    &kp LS(N4)  &kp LS(N5)    &arrow_func  &kp RA(MINUS)  &arrow_thin      &scope_sep
+                                         &trans      &trans         &kp BSPC                                                                            &kp INS     &kp DEL       &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;

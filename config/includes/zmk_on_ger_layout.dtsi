@@ -1,0 +1,92 @@
+// ------------------- DEFAULT -----------------------
+#define DE_CARET GRAVE                       // ^
+#define DE_1 N1                              // 1
+#define DE_2 N2                              // 2
+#define DE_3 N3                              // 3
+#define DE_4 N4                              // 4
+#define DE_5 N5                              // 5
+#define DE_6 N6                              // 6
+#define DE_7 N7                              // 7
+#define DE_8 N8                              // 8
+#define DE_9 N9                              // 9
+#define DE_0 N0                              // 0
+#define DE_SZ MINUS                          // ß
+#define DE_AKUT EQUAL                        // ´
+
+#define DE_Q Q                               // q
+#define DE_W W                               // w
+#define DE_E E                               // e
+#define DE_R R                               // r
+#define DE_T T                               // t
+#define DE_Z Y                               // z
+#define DE_U U                               // u
+#define DE_I I                               // i
+#define DE_O O                               // o
+#define DE_P P                               // p
+#define DE_ue LBKT                           // ü
+#define DE_PLUS RBKT                         // +
+
+#define DE_A A                               // a
+#define DE_S S                               // s
+#define DE_D D                               // d
+#define DE_F F                               // f
+#define DE_G G                               // g
+#define DE_H H                               // h
+#define DE_J J                               // j
+#define DE_K K                               // k
+#define DE_L L                               // l
+#define DE_OE SEMI                           // ö
+#define DE_AE SQT                            // ä
+#define DE_HASH BSLH                         // #
+
+#define DE_LT NUBS                           // <
+#define DE_Y Z                               // y
+#define DE_X X                               // x
+#define DE_C C                               // c
+#define DE_V V                               // v
+#define DE_B B                               // b
+#define DE_N N                               // n
+#define DE_M M                               // m
+#define DE_COMMA COMMA                       // ,
+#define DE_DOT DOT                           // .
+#define DE_MINUS FSLH                        // -
+
+// ------------------- SHIFT --------------------------
+#define DE_DEGREE LS(DE_CARET)                // °
+#define DE_EXCL LS(DE_1)                      // !
+#define DE_DQT LS(DE_2)                       // "
+#define DE_PARA LS(DE_3)                      // §
+#define DE_DOLLAR LS(DE_4)                    // $
+#define DE_PERCENT LS(DE_5)                   // %
+#define DE_AND LS(DE_6)                       // &
+#define DE_FSLH LS(DE_7)                      // /
+#define DE_PARO LS(DE_8)                      // (
+#define DE_PARC LS(DE_9)                      // )
+#define DE_EQUAL LS(DE_0)                     // =
+#define DE_QMARK LS(DE_SZ)                    // ?
+#define DE_BACKT LS(DE_AKUT)                  // `
+
+#define DE_STAR LS(DE_PLUS)                   // *
+
+#define DE_SQT LS(DE_HASH)                    // '
+
+#define DE_GT LS(DE_LT)                       // >
+#define DE_SEMI LS(DE_COMMA)                  // ;
+#define DE_COLON LS(DE_DOT)                   // :
+#define DE_UNDERL LS(DE_MINUS)                // _
+    
+// ------------------- ALTGR (RALT) --------------------
+#define DE_SUP2 RA(DE_2)                      // ²
+#define DE_SUP3 RA(DE_3)                      // ³
+#define DE_CURLO RA(DE_7)                     // {
+#define DE_BRAO RA(DE_8)                      // [
+#define DE_BRAC RA(DE_9)                      // ]
+#define DE_CURLC RA(DE_0)                     // }
+#define DE_BSLH RA(DE_SZ)                     // "\"
+
+#define DE_AT RA(DE_Q)                        // @
+#define DE_EURO RA(DE_E)                      // €
+#define DE_TILDE RA(DE_PLUS)                  // ~
+
+#define DE_PIPE RA(DE_LT)                     // |
+#define DE_MICRO RA(DE_M)                     // µ

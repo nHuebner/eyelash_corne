@@ -1,0 +1,31 @@
+// Navigation
+#define MAC_LEFT_W LA(LEFT)
+#define MAC_LEFT_L LG(LEFT)
+#define MAC_RIGHT_W LA(RIGHT)
+#define MAC_RIGHT_L LG(RIGHT)
+
+// HYPER and MEH
+#define MAC_HYPER LS(LC(LG(LALT)))
+#define MAC_MEH LC(LG(LALT))
+
+// Shortcuts
+#define MAC_UNDO LG(Z)
+#define MAC_REDO LS(LG(Z))
+#define MAC_CUT LG(X)
+#define MAC_COPY LG(C)
+#define MAC_PASTE LG(V)
+#define MAC_BACK LG(LBKT)
+#define MAC_FWD LG(RBKT)
+#define MAC_TAB_PREV LS(LC(TAB))
+#define MAC_TAB_NEXT LC(TAB)
+#define MAC_SPACE_PREV LC(LEFT)
+#define MAC_SPACE_NEXT LC(RIGHT)
+
+// macOS Mission Control
+#define MAC_MC_ALL LC(UP)
+#define MAC_MC_APP LC(DOWN)
+#define MAC_MC_DESK F11
+
+// ZMK Helper
+#define XXX &none
+#define ___ &trans

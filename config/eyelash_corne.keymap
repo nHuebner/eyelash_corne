@@ -1,6 +1,10 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 25
 
+#define HM_TAPPING_TERM 300
+#define HM_TAPPING_TERM_FAST 200
+#define HM_PRIOR_IDLE 150
+
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
@@ -178,6 +182,96 @@
             label = "TILDE_DE";
             bindings = <&kp RA(RBKT)>;               /* AltGr + +  → ~ */
         };
+
+        // Positional Homerow mods
+        // Homerow mods that prevent accidental activations when rolling keys,
+        // such as when typing `st` or `ne` on colemak-dh layouts or `as` on
+        // qwerty.
+        //
+        // Works by only allowing a mod to activate within tapping-term if
+        // it's on the opposite side of the keyboard or on the same side thumb
+        // keys.
+
+        // Further optimization using urob's timerless homerow mods method:
+        // https://github.com/urob/zmk-config#timeless-homerow-mods
+        hm_l: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>,  <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <175>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+        hm_r: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+
+        // Positional Homerow mods for shift
+        // Use faster tapping term and disable some features that may
+        // cause false negatives.
+        hm_shift_l: hm_shift_l {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            // hold-trigger-on-release;
+        };
+
+        hm_shift_r: hm_shift_r {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            // hold-trigger-on-release;
+        };
+
+        /*
+         * Non-Positional Homerow Mods
+         * Used for &mm_grescm_gui behavior on left hand.
+         *
+         * Usage: &hm LSHFT T
+         * Tap: T
+         * Tap-Tap-Hold: Repeat T
+         * Hold: LSHIFT
+         */
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <200>;
+        };
     };
 
     /* ───────────────────────── Encoder / Combos ───────────────────────── */
@@ -232,7 +326,7 @@
             display-name = "BASE";
             bindings = <
 &kp TAB  &kp Q            &kp W            &kp F         &kp P         &kp B                                    &rgb_ug RGB_COLOR_HSB(0,0,100)                     &kp J        &kp L            &kp U         &kp Z             &kp LS(COMMA)     &deae
-&kp ESC  &hrm LEFT_WIN A  &hrm LEFT_ALT R  &hrm LCTRL S  &hrm LSHIFT T &kp G                   &rgb_ug RGB_EFR  &rgb_ug RGB_TOG                   &rgb_ug RGB_EFF  &kp M        &hrm RSHIFT N    &hrm RCTRL E  &hrm RIGHT_ALT I  &hrm RIGHT_WIN O  &deoe
+&kp ESC  &hm_l LEFT_WIN A  &hm_l LEFT_ALT R  &hm_l LCTRL S  &hm_l LSHIFT T &kp G                   &rgb_ug RGB_EFR  &rgb_ug RGB_TOG                   &rgb_ug RGB_EFF  &kp M        &hm_r RSHIFT N    &hm_r RCTRL E  &hm_r RIGHT_ALT I  &hm_r RIGHT_WIN O  &deoe
 &desz    &kp Y            &kp X            &kp C         &kp D         &kp V      &kp SPACE                     &rgb_ug RGB_COLOR_HSB(120,98,36)                   &kp K        &kp H            &kp COMMA     &kp DOT           &kp LS(N7)        &deue
                                            &kp LSHIFT    &lt 1 SPACE   &lt 2 DEL                                                                                   &lt 4 ENTER  &lt 3 BACKSPACE  &kp RALT
             >;

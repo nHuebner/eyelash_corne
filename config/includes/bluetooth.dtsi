@@ -1,0 +1,13 @@
+#include <dt-bindings/zmk/bt.h>
+
+#define BLE_CLR &bt BT_CLR      // BT_CLR	    Clear bond information between the keyboard and host for the selected profile.
+#define BLE_CLA &bt BT_CLR_ALL  // BT_CLR_ALL	Clear bond information between the keyboard and host for all profiles.
+#define BLE_NXT &bt BT_NXT      // BT_NXT	    Switch to the next profile, cycling through to the first one when the end is reached.
+#define BLE_PRV &bt BT_PRV      // BT_PRV	    Switch to the previous profile, cycling through to the last one when the beginning is reached.
+//#define BLE_CLR &bt BT_DISC // BT_DISC	    Disconnect from the 0-indexed profile by number, if it's currently connected and inactive; must include a number as an argument in the keymap to work correctly, e.g. BT_DISC 0.
+
+#define BLE_WIN &bt BT_SEL 0     // BT_SEL	    Select the 0-indexed profile by number; must include a number as an argument in the keymap to work correctly, e.g. BT_SEL 0.
+#define BLE_MAC &bt BT_SEL 1     // BT_SEL	    Select the 0-indexed profile by number; must include a number as an argument in the keymap to work correctly, e.g. BT_SEL 0.
+#define BLE_P3 &bt BT_SEL 2     // BT_SEL	    Select the 0-indexed profile by number; must include a number as an argument in the keymap to work correctly, e.g. BT_SEL 0.
+#define BLE_P4 &bt BT_SEL 3     // BT_SEL	    Select the 0-indexed profile by number; must include a number as an argument in the keymap to work correctly, e.g. BT_SEL 0.
+#define BLE_P5 &bt BT_SEL 4     // BT_SEL	    Select the 0-indexed profile by number; must include a number as an argument in the keymap to work correctly, e.g. BT_SEL 0.

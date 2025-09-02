@@ -67,14 +67,14 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             label = "WIN Active";
-            bindings = <BLE_WIN &tog BASE>;      /* Shift+´ , dann Space */
+            bindings = <&bt BT_SEL 0 &tog BASE>;      /* Shift+´ , dann Space */
         }
 
         mac_active: mac_active {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             label = "MAC Active";
-            bindings = <BLE_MAC &tog BASEMAC>;      /* Shift+´ , dann Space */
+            bindings = <&bt BT_SEL 1 &tog BASEMAC>;      /* Shift+´ , dann Space */
         }
 
           

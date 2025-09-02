@@ -8,11 +8,20 @@
 #include "includes/mouse.dtsi"
 #include "includes/bluetooth.dtsi"
 #include "includes/rgb.dtsi"
+#include "includes/encoders.dtsi"
 
 #include "includes/behaviours_homerow_mods.dtsi"
+#include "includes/custom_behaviours.dtsi"
 
 
 &soft_off { hold-time-ms = <2000>; };
+
+#define BASE 0 // Base Layer for Win
+#define BASEMAC 1 // Layer Shifter to Mac specific
+#define WCTRL 2
+#define MCTRL 3
+
+#define ADAPT
 
 /* ───────────────────────────── Behaviors ───────────────────────────── */
 
@@ -84,66 +93,7 @@
             bindings = <&kp MINUS>, <&macro_SS>;
         };
 
-        /* ── Macros: =>, ->, ::, ||, ??, ===, !== ── */
-
-        or_comp: or_comp {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            label = "OR COMP";
-            bindings = <&kp RA(NUBS) &kp RA(NUBS)>;           /* "||" */
-        };
-
-        nullish_comp: nullish_comp {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            label = "NULLISH COMP";
-            bindings = <&kp LS(MINUS) &kp LS(MINUS)>;         /* "??" */
-        };
-
         
-        strict_equal: strict_equal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            label = "STRICT EQUAL";
-            bindings = <&kp LS(N0) &kp LS(N0) &kp LS(N0)>;    /* "===" */
-        };
-        
-        strict_unequal: strict_unequal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            label = "STRICT UNEQUAL";
-            bindings = <&kp LS(N1) &kp LS(N0) &kp LS(N0)>;    /* "!==" */
-        };
-
-        arrow_func: arrow_func {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            label = "ARROW_FUNC";
-            bindings = <&kp LS(N0) &kp LS(NUBS)>;           /* "=>" */
-        };
-
-        arrow_thin: arrow_thin {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            label = "ARROW_THIN";
-            bindings = <&kp FSLH &kp LS(NUBS)>;           /* "->" */
-        };
-
-        scope_sep: scope_sep {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            label = "SCOPE_SEP";
-            bindings = <&kp LS(DOT) &kp LS(DOT)>; /* "::" */
-        };
-
-        /* ── DE-sichere ` und ~ ── */
-
-        backtick_de: backtick_de {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            label = "BTICK_DE";
-            bindings = <&kp LS(EQUAL) &kp SPACE>;      /* Shift+´ , dann Space */
-        };
 
         tilde_de: tilde_de {
             compatible = "zmk,behavior-macro";
@@ -157,19 +107,7 @@
 
     /* ───────────────────────── Encoder / Combos ───────────────────────── */
 
-    rgb_encoder: rgb_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
-    };
-
-    scroll_encoder: scroll_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-        tap-ms = <100>;
-    };
+    
 
     combos {
         compatible = "zmk,combos";
@@ -198,22 +136,26 @@
 
         /* ================= BASE (Deutsch + ergonomisch) ================= */
         // ----------------------------------------------------------------------------------------------------
-        // | TAB |  Q  |  W  |  F  |  P  |  B  |     |     |  G  |     |  J  |  L   |  U  |  Y  |  ;  |  Ä  |
-        // | ESC |  A  |  R  |  S  |  T  |  G  |     |  G  |  G  |  G  |  M  |  N   |  E  |  I  |  O  |  Ö  |
-        // |  ß  |  Z  |  X  |  C  |  D  |  V  | SPC |     |  G  |     |  K  |  H   |  ,  |  .  |  /  |  Ü  |
-        //                   | GUI | LWR | SPC |     |     |     |     | ENT | RSE  | ALT |
+        // | Esc |  X  |  .  |  O  |  ,  |  Y  |     |     |  G  |     |  V  |  G   |  C  |  L  |  J  |  ß  |
+        // | Tab |  H  |  A  |  E  |  I  |  U  |     |  G  |  G  |  G  |  D  |  T   |  R  |  N  |  S  |  F  |
+        // |  #  |  K  |  Q  |  Ä  |  Ü  |  Ö  |  #  |     |  G  |     |  B  |  P   |  W  |  M  |  Z  | DEL |
+        //                   | DEL | SPC | ENT |     |     |     |     | ENT | SPC  | ALT |
 
         default_layer {
-            display-name = "BASE";
+            display-name = "BASE"
             bindings = <
-&kp TAB  &kp Q            &kp W            &kp F         &kp P         &kp B                                    &rgb_ug RGB_COLOR_HSB(0,0,100)                     &kp J        &kp L            &kp U         &kp Z             &kp LS(COMMA)     &deae
-&kp ESC  &hm_l LEFT_WIN A  &hm_l LEFT_ALT R  &hm_l LCTRL S  &hm_l LSHIFT T &kp G                   &rgb_ug RGB_EFR  &rgb_ug RGB_TOG                   &rgb_ug RGB_EFF  &kp M        &hm_r RSHIFT N    &hm_r RCTRL E  &hm_r RIGHT_ALT I  &hm_r RIGHT_WIN O  &deoe
-&desz    &kp Y            &kp X            &kp C         &kp D         &kp V      &kp SPACE                     &rgb_ug RGB_COLOR_HSB(120,98,36)                   &kp K        &kp H            &kp COMMA     &kp DOT           &kp LS(N7)        &deue
-                                           &kp LSHIFT    &lt 1 SPACE   &lt 2 DEL                                                                                   &lt 4 ENTER  &lt 3 BACKSPACE  &kp RALT
+// ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮                                                         ╭────────────────────────╮                             ╭────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┬────────────────────────┬────────────────────────╮
+             &kp ESC           &kp DE_X                 &kp DE_DOT                 &kp DE_O                &kp DE_COMMA                &kp DE_Y                                                                           R_COL_W                                             &kp DE_V                 &kp DE_G                 &kp DE_C                 &kp DE_L                &kp DE_J                 &kp DE_SZ           
+// ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤                                ╭────────────────────────┼────────────────────────┼────────────────────────╮    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────┤
+             &kp TAB           &hm_l LEFT_WIN DE_H      &hm_l LEFT_ALT DE_A        &hm_l LCTRL DE_E        &hm_l LSHIFT DE_I           &kp DE_U                                               win_active                  R_RGB_TOG                mac_active                 &kp DE_D                 &hm_r RSHIFT DE_T        &hm_r RCTRL DE_R         &hm_r RALT DE_N         &hm_r RIGHT_WIN DE_S     &kp DE_F            
+// ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤  ╭────────────────────────╮    ╰────────────────────────┼────────────────────────┼────────────────────────╯    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────┤
+             XXX               &kp DE_K                 &kp DE_Q                   &kp DE_A_UM             &kp DE_U_UM                 &kp DE_O_UM                    XXX                                                 R_COL_G                                             &kp DE_B                 &kp DE_P                 &kp DE_W                 &kp DE_M                &kp DE_Z                 &kp DEL        
+// ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤  ╰────────────────────────╯                             ╰────────────────────────╯                             ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────╯
+                                                                                   &kp DEL                 &lt 1 SPACE                 &lt 2 ENTER                                                                                                                            &lt 4 ENTER              &lt 3 BACKSPACE          &kp RSHIFT      
+//                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯                                                                                                                ╰────────────────────────┴────────────────────────┴────────────────────────╯
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-        };
+            sensor-bindings = <&scroll_encoder>;
+        }
 
         /* ================= CODING (RAISE inhaltlich) ================= */
         // -------------------------------------------------------------------------------------------------------
@@ -229,7 +171,7 @@
 
             bindings = <
 &kp RA(N8)     &kp RA(N7)  &kp LS(N8)    &kp LS(N9)  &kp RA(N0)     &kp RA(N9)                                            &bt BT_NXT                    &kp NUBS    &kp LS(NUBS)  &kp LS(N0)   &kp RBKT       &tilde_de        &backtick_de
-&kp LS(N1)     &kp FSLH    &kp LS(RBKT)  &kp LS(N7)  &kp RA(MINUS)  &kp RA(NUBS)                            &bt BT_SEL 0  &studio_unlock  &bt BT_SEL 1  &kp LS(N6)  &kp GRAVE     &kp LS(DOT)  &kp LS(COMMA)  &kp LS(MINUS)    &kp RA(Q)
+&kp LS(N1)     &kp FSLH    &kp LS(RBKT)  &kp LS(N7)  &kp RA(MINUS)  &kp RA(NUBS)                            win_active  &studio_unlock  mac_active  &kp LS(N6)  &kp GRAVE     &kp LS(DOT)  &kp LS(COMMA)  &kp LS(MINUS)    &kp RA(Q)
 &kp LS(FSLH)   &kp BSLH    &kp LS(BSLH)  &kp LS(N2)  &kp COMMA      &kp DOT                   &kp C_MUTE                  &bt BT_PRV                    &kp LS(N4)  &kp LS(N5)    &arrow_func  &kp RA(MINUS)  &arrow_thin      &scope_sep
                                          &trans      &trans         &kp BSPC                                                                            &kp INS     &kp DEL       &trans
             >;

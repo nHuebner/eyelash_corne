@@ -1,0 +1,82 @@
+/ {
+    behaviors {
+
+/* ── Macros: =>, ->, ::, ||, ??, ===, !== ── */
+
+        or_comp: or_comp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "OR COMP";
+            bindings = <&kp RA(NUBS) &kp RA(NUBS)>;           /* "||" */
+        };
+
+        nullish_comp: nullish_comp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "NULLISH COMP";
+            bindings = <&kp LS(MINUS) &kp LS(MINUS)>;         /* "??" */
+        };
+
+        
+        strict_equal: strict_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "STRICT EQUAL";
+            bindings = <&kp LS(N0) &kp LS(N0) &kp LS(N0)>;    /* "===" */
+        };
+        
+        strict_unequal: strict_unequal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "STRICT UNEQUAL";
+            bindings = <&kp LS(N1) &kp LS(N0) &kp LS(N0)>;    /* "!==" */
+        };
+
+        arrow_func: arrow_func {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "ARROW_FUNC";
+            bindings = <&kp LS(N0) &kp LS(NUBS)>;           /* "=>" */
+        };
+
+        arrow_thin: arrow_thin {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "ARROW_THIN";
+            bindings = <&kp FSLH &kp LS(NUBS)>;           /* "->" */
+        };
+
+        scope_sep: scope_sep {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "SCOPE_SEP";
+            bindings = <&kp LS(DOT) &kp LS(DOT)>; /* "::" */
+        };
+
+        /* ── DE-sichere ` und ~ ── */
+
+        backtick_de: backtick_de {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "BTICK_DE";
+            bindings = <&kp LS(EQUAL) &kp SPACE>;      /* Shift+´ , dann Space */
+        };
+
+
+        win_active: win_active {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "WIN Active";
+            bindings = <BLE_WIN &tog BASE>;      /* Shift+´ , dann Space */
+        }
+
+        mac_active: mac_active {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "MAC Active";
+            bindings = <BLE_MAC &tog BASEMAC>;      /* Shift+´ , dann Space */
+        }
+
+          
+    };
+}

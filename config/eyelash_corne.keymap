@@ -1,5 +1,5 @@
 #include "includes/eyelash_42.h"
-#include "includes/zmk_on_ger_layout.h"
+#include "includes/zmk_on_ger_layout.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/keys.h>

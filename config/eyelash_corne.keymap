@@ -164,7 +164,7 @@
         default_layer {
             display-name = "BASE";
             bindings = <
-&kp ESC  &kp Q            &kp W            &kp F         &kp P         &kp B                                    R_COL_W                     &kp J        &kp L            &kp U         &kp Z             &kp LS(COMMA)     &deae
+&kp ESC  &kp DE_X            &kp W            &kp F         &kp P         &kp B                                    R_COL_W                     &kp J        &kp L            &kp U         &kp Z             &kp LS(COMMA)     &deae
 &kp TAB  &hm_l LEFT_WIN A  &hm_l LEFT_ALT R  &hm_l LCTRL S  &hm_l LSHIFT T &kp G                  R_RGB_BRI  R_RGB_ON  R_RGB_BRD  &kp M        &hm_r RSHIFT N    &hm_r RCTRL E  &hm_r RIGHT_ALT I  &hm_r RIGHT_WIN O  &deoe
 XXX    &kp Y            &kp X            &kp C         &kp D         &kp V      &kp SPACE                     R_COL_G                   &kp K        &kp H            &kp COMMA     &kp DOT           &kp LS(N7)        &deue
                                            &kp LSHIFT    &lt 1 SPACE   &lt 2 DEL                                                                                   &lt 4 ENTER  &lt 3 BACKSPACE  &kp RALT

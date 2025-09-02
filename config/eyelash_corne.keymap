@@ -21,7 +21,7 @@
 #define WCTRL 2
 #define MCTRL 3
 
-#define ADAPT
+#define ADAPT 17
 
 /* ───────────────────────────── Behaviors ───────────────────────────── */
 

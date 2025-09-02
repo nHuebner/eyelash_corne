@@ -11,10 +11,10 @@
 #include "includes/mouse.dtsi"
 #include "includes/bluetooth.dtsi"
 #include "includes/rgb.dtsi"
-#include "includes/encoders.dtsi"
 
 //#include "includes/behaviours_homerow_mods.dtsi"
 #include "includes/custom_behaviours.dtsi"
+#include "includes/encoders.dtsi"
 
 
 &soft_off { hold-time-ms = <2000>; };

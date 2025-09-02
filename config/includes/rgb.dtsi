@@ -15,5 +15,5 @@
 #define R_RGB_EFR &rgb_ug RGB_EFR              // RGB_EFR	        Cycles the RGB feature's effect reverse
 //&rgb_ug RGB_COLOR_HSB      // RGB_COLOR_HSB	Sets a specific HSB (HSV) value for the underglow
 
-#define R_COL_W &rgb_ug RGB_COLOR_HSB(0,0,100)
-#define R_COL_G &rgb_ug RGB_COLOR_HSB(120,100,100)
+#define R_COL_W &rgb_ug RGB_COLOR_HSB 0 0 100
+#define R_COL_G &rgb_ug RGB_COLOR_HSB 120 100 100

@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
   BASE:
-  - $$mdi:keyboard-tab$$
+  - $$mdi:keyboard-esc$$
   - Q
   - W
   - F
@@ -14,7 +14,7 @@ layers:
   - Z
   - {t: 'Sft+,', s: Sft+<}
   - '&deae'
-  - $$mdi:keyboard-esc$$
+  - $$mdi:keyboard-tab$$
   - {t: A, h: LEFT WIN}
   - {t: R, h: '$$mdi:apple-keyboard-option$$'}
   - {t: S, h: '$$mdi:apple-keyboard-control$$'}
@@ -29,7 +29,7 @@ layers:
   - {t: I, h: '$$mdi:apple-keyboard-option$$'}
   - {t: O, h: RIGHT WIN}
   - '&deoe'
-  - '&desz'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Y
   - X
   - C

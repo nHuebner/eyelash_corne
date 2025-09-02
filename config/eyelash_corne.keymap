@@ -145,7 +145,7 @@
         // |  #  |  K  |  Q  |  Ä  |  Ü  |  Ö  |  #  |     |  G  |     |  B  |  P   |  W  |  M  |  Z  | DEL |
         //                   | DEL | SPC | ENT |     |     |     |     | ENT | SPC  | ALT |
 
-        default_layer {
+        /* default_layer {
             display-name = "BASE";
             bindings = <
 // ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮                                        ╭────────────────────────╮                             ╭────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┬────────────────────────┬────────────────────────╮
@@ -159,6 +159,18 @@
 //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯                                                                                               ╰────────────────────────┴────────────────────────┴────────────────────────╯
             >;
             sensor-bindings = <&scroll_encoder>;
+        }; */
+
+        default_layer {
+            display-name = "BASE";
+            bindings = <
+&kp TAB  &kp Q            &kp W            &kp F         &kp P         &kp B                                    R_COL_W                     &kp J        &kp L            &kp U         &kp Z             &kp LS(COMMA)     &deae
+&kp ESC  &hm_l LEFT_WIN A  &hm_l LEFT_ALT R  &hm_l LCTRL S  &hm_l LSHIFT T &kp G                  R_RGB_BRI  R_RGB_ON  R_RGB_BRD  &kp M        &hm_r RSHIFT N    &hm_r RCTRL E  &hm_r RIGHT_ALT I  &hm_r RIGHT_WIN O  &deoe
+&desz    &kp Y            &kp X            &kp C         &kp D         &kp V      &kp SPACE                     R_COL_G                   &kp K        &kp H            &kp COMMA     &kp DOT           &kp LS(N7)        &deue
+                                           &kp LSHIFT    &lt 1 SPACE   &lt 2 DEL                                                                                   &lt 4 ENTER  &lt 3 BACKSPACE  &kp RALT
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         /* ================= CODING (RAISE inhaltlich) ================= */

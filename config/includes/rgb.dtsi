@@ -2,7 +2,7 @@
 
 #define R_RGB_ON &rgb_ug RGB_ON                // RGB_ON	        Turns the RGB feature on
 #define R_RGB_OFF &rgb_ug RGB_OFF              // RGB_OFF	        Turns the RGB feature off
-#define R_RGB_TOG RGB_TOG              // RGB_TOG	        Toggles the RGB feature on and off
+#define R_RGB_TOG &rgb_ug RGB_TOG              // RGB_TOG	        Toggles the RGB feature on and off
 #define R_RGB_HUI &rgb_ug RGB_HUI              // RGB_HUI	        Increases the hue of the RGB feature
 #define R_RGB_HUD &rgb_ug RGB_HUD              // RGB_HUD	        Decreases the hue of the RGB feature
 #define R_RGB_SAI &rgb_ug RGB_SAI              // RGB_SAI	        Increases the saturation of the RGB feature
@@ -15,5 +15,5 @@
 #define R_RGB_EFR &rgb_ug RGB_EFR              // RGB_EFR	        Cycles the RGB feature's effect reverse
 //&rgb_ug RGB_COLOR_HSB      // RGB_COLOR_HSB	Sets a specific HSB (HSV) value for the underglow
 
-#define R_COL_W RGB_COLOR_HSB(0,0,100)
-#define R_COL_G RGB_COLOR_HSB(120,100,100)
+#define R_COL_W &rgb_ug RGB_COLOR_HSB(0,0,100)
+#define R_COL_G &rgb_ug RGB_COLOR_HSB(120,100,100)

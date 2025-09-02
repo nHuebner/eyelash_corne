@@ -24,6 +24,9 @@
 
 #define ADAPT 17
 
+#define XXX &none
+#define ___ &trans
+
 /* ───────────────────────────── Behaviors ───────────────────────────── */
 
 / {

@@ -71,13 +71,13 @@
                 = <BLE_WIN &to BASE>
                 ;
         };
-/*
+
         mac_active: mac_active {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            label = "MAC_ACTIVE";
-            bindings = <&bt BT_SEL 1 &to BASEMAC>;      /* Shift+´ , dann Space *
-        }; */
+            label = "macro_switch_to_mac";
+            bindings = <BLE_MAC &to BASEMAC>;
+        };
 
           
     };

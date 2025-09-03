@@ -32,9 +32,9 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - DE K
   - DE Q
-  - DE A UM
-  - DE U UM
-  - DE O UM
+  - DE A UMLAUT
+  - DE U UMLAUT
+  - DE O UMLAUT
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - RGB COLOR HSB(120,100,100)
   - DE B

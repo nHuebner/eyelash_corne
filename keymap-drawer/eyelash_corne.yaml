@@ -22,7 +22,7 @@ layers:
   - DE U
   - '&win_active'
   - RGB TOG
-  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
+  - '&mac_active'
   - DE D
   - {t: DE T, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: DE R, h: '$$mdi:apple-keyboard-control$$'}

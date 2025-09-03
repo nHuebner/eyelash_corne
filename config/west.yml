@@ -30,7 +30,7 @@ manifest:
       remote: dhruvinsh
       revision: main
     # Local KeyMaps
-    - name: zmk-local
+    - name: zmk-locales
       remote: joelspadin
       revision: main
   self:

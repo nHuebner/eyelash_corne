@@ -55,49 +55,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
-        };
-
-        /* ── Umlaute als Tap-Dance (DE-Host, ohne Unicode) ──
-       DE-Layout:  ä = '    Ä = Shift+'    → SQT / LS(SQT)
-                   ö = ;    Ö = Shift+;    → SEMI / LS(SEMI)
-                   ü = [    Ü = Shift+[    → LBKT / LS(LBKT)
-                   ß = -    SS (Doppeltap) → MINUS / Macro "SS"   */
-
-        macro_SS: macro_SS {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(S) &kp LS(S)>;
-        };
-
-        deae: deae {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp SQT>, <&kp LS(SQT)>;
-        };
-
-        deoe: deoe {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp SEMI>, <&kp LS(SEMI)>;
-        };
-
-        deue: deue {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LBKT>, <&kp LS(LBKT)>;
-        };
-
-        desz: desz {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp MINUS>, <&macro_SS>;
-        };
-
-        
+        };  
 
         tilde_de: tilde_de {
             compatible = "zmk,behavior-macro";
@@ -151,7 +109,7 @@
 // ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮                                        ╭────────────────────────╮                             ╭────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┬────────────────────────┬────────────────────────╮
              &kp ESC           &kp DE_X                 &kp DE_DOT                 &kp DE_O                &kp DE_COMMA                &kp DE_Y                                                           R_COL_W                                            &kp DE_V                 &kp DE_G                 &kp DE_C                 &kp DE_L                &kp DE_J                 &kp DE_SZ           
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤               ╭────────────────────────┼────────────────────────┼────────────────────────╮    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────┤
-             &kp TAB           &hm_l LEFT_WIN DE_H      &hm_l LEFT_ALT DE_A        &hm_l LCTRL DE_E        &hm_l LSHIFT DE_I           &kp DE_U                                  BLE_WIN                  R_RGB_TOG                 BLE_MAC                  &kp DE_D                 &hm_r RSHIFT DE_T        &hm_r RCTRL DE_R         &hm_r RALT DE_N         &hm_r RIGHT_WIN DE_S     &kp DE_F            
+             &kp TAB           &hm_l LGUI DE_H          &hm_l LALT DE_A            &hm_l LCTRL DE_E        &hm_l LSHFT DE_I            &kp DE_U                                  win_active               R_RGB_TOG                 BLE_MAC                  &kp DE_D                 &hm_r RSHFT DE_T         &hm_r RCTRL DE_R         &hm_r RALT DE_N         &hm_r RGUI DE_S          &kp DE_F            
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤  ╭───────╮    ╰────────────────────────┼────────────────────────┼────────────────────────╯    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────┤
              XXX               &kp DE_K                 &kp DE_Q                   &kp DE_A_UMLAUT         &kp DE_U_UMLAUT             &kp DE_O_UMLAUT         XXX                                        R_COL_G                                            &kp DE_B                 &kp DE_P                 &kp DE_W                 &kp DE_M                &kp DE_Z                 &kp DEL        
 // ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤  ╰───────╯                             ╰────────────────────────╯                             ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────╯

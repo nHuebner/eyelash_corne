@@ -6,6 +6,18 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/bt.h>
 
+
+
+#define BASE 0 // Base Layer for Win
+#define BASEMAC 1 // Layer Shifter to Mac specific
+#define WCTRL 2
+#define MCTRL 3
+
+#define ADAPT 17
+
+#define XXX &none
+#define ___ &trans
+
 #include "includes/mouse.dtsi"
 #include "includes/bluetooth.dtsi"
 #include "includes/rgb.dtsi"
@@ -17,15 +29,6 @@
 
 &soft_off { hold-time-ms = <2000>; };
 
-#define BASE 0 // Base Layer for Win
-#define BASEMAC 1 // Layer Shifter to Mac specific
-#define WCTRL 2
-#define MCTRL 3
-
-#define ADAPT 17
-
-#define XXX &none
-#define ___ &trans
 
 /* ───────────────────────────── Behaviors ───────────────────────────── */
 

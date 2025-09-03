@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/urob
     - name: dhruvinsh
       url-base: https://github.com/dhruvinsh
+    - name: joelspadin
+      url-base: https://github.com/joelspadin
   projects:
     - name: eyelash_corne
       url: https://github.com/a741725193/zmk-new_corne
@@ -26,6 +28,10 @@ manifest:
     # Used to be a key feature in urob's fork
     - name: zmk-tri-state
       remote: dhruvinsh
+      revision: main
+    # Local KeyMaps
+    - name: zmk-local
+      remote: joelspadin
       revision: main
   self:
     path: config

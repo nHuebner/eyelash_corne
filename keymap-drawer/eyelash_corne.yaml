@@ -15,19 +15,19 @@ layers:
   - DE J
   - DE SZ
   - $$mdi:keyboard-tab$$
-  - {t: DE H, h: LEFT WIN}
+  - {t: DE H, h: LGUI}
   - {t: DE A, h: '$$mdi:apple-keyboard-option$$'}
   - {t: DE E, h: '$$mdi:apple-keyboard-control$$'}
   - {t: DE I, h: '$$mdi:apple-keyboard-shift$$'}
   - DE U
-  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
+  - '&win_active'
   - RGB TOG
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
   - DE D
   - {t: DE T, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: DE R, h: '$$mdi:apple-keyboard-control$$'}
   - {t: DE N, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: DE S, h: RIGHT WIN}
+  - {t: DE S, h: RGUI}
   - DE F
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - DE K

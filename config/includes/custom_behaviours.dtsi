@@ -68,7 +68,7 @@
             label = "macro_switch_to_win";
             #binding-cells = <0>;
             bindings
-                = <&bt BT_SEL 0 &to BASE>
+                = <&bt BT_SEL(0) &to BASE>
                 ;
         };
 /*

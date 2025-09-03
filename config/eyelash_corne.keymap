@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/bt.h>
 
 #include "includes/zmk_on_ger_layout.h"
 #include "includes/mouse.dtsi"
@@ -12,7 +13,6 @@
 #include "includes/behaviours_homerow_mods.dtsi"
 #include "includes/custom_behaviours.dtsi"
 #include "includes/encoders.dtsi"
-#include <dt-bindings/zmk/bt.h>
 
 
 &soft_off { hold-time-ms = <2000>; };

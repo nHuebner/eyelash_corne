@@ -68,7 +68,7 @@
             label = "macro_switch_to_win";
             #binding-cells = <0>;
             bindings
-                = <BLE_WIN>, <&to BASE>
+                = <BLE_WIN &to BASE>
                 ;
         };
 /*

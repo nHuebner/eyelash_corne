@@ -16,8 +16,8 @@ layers:
   - DE SZ
   - $$mdi:keyboard-tab$$
   - {t: DE H, h: LGUI}
-  - {t: DE A, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: DE E, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: DE A, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: DE E, h: '$$mdi:apple-keyboard-option$$'}
   - {t: DE I, h: '$$mdi:apple-keyboard-shift$$'}
   - DE U
   - '&win_active'
@@ -25,11 +25,11 @@ layers:
   - '&mac_active'
   - DE D
   - {t: DE T, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: DE R, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: DE N, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: DE R, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: DE N, h: '$$mdi:apple-keyboard-control$$'}
   - {t: DE S, h: RGUI}
   - DE F
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Ctl+DE C
   - DE K
   - DE Q
   - DE A UMLAUT
@@ -44,11 +44,60 @@ layers:
   - DE Z
   - $$mdi:backspace-reverse-outline$$
   - $$mdi:backspace-reverse-outline$$
-  - {t: '$$mdi:keyboard-space$$', h: CODING}
-  - {t: '$$mdi:keyboard-return$$', h: NUMBER}
-  - {t: '$$mdi:keyboard-return$$', h: SYS}
-  - {t: '$$mdi:backspace$$', h: SYMBOL}
+  - {t: '$$mdi:keyboard-space$$', h: BASE MAC}
+  - {t: '$$mdi:keyboard-return$$', h: CODING}
+  - {t: '$$mdi:keyboard-return$$', h: SYMBOL}
+  - {t: '$$mdi:backspace$$', h: NUMBER}
   - $$mdi:apple-keyboard-shift$$
+  BASE MAC:
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: DE H, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: DE A, h: LGUI}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: DE N, h: RGUI}
+  - {t: DE S, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:keyboard-space$$', h: BASE MAC, type: held}
+  - {t: '$$mdi:keyboard-return$$', h: CODING}
+  - {t: '$$mdi:keyboard-return$$', h: SYMBOL}
+  - {t: '$$mdi:backspace$$', h: NUMBER}
+  - {t: '$$mdi:transfer$$', type: trans}
   CODING:
   - {t: AltGr+8, s: AltGr+*}
   - {t: AltGr+7, s: AltGr+&}
@@ -93,8 +142,8 @@ layers:
   - '&arrow_thin'
   - '&scope_sep'
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {type: held alternate}
+  - {t: '$$mdi:backspace$$', type: held}
   - INS
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
@@ -142,10 +191,10 @@ layers:
   - $$mdi:keyboard-tab-reverse$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '0', s: )}
+  - {t: '0', s: ), type: held}
   - {t: '0', s: )}
   SYMBOL:
   - $$mdi:keyboard-esc$$
@@ -191,10 +240,10 @@ layers:
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held alternate}
   - $$mdi:keyboard-space$$
-  - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {type: held}
+  - {t: '$$mdi:keyboard-return$$', type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   SYS:
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
@@ -242,6 +291,6 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}

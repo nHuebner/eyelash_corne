@@ -17,6 +17,7 @@
 #define MAC_COPY_W_F MY_MEH(DE_V)
 #define MAC_PASTE LG(DE_V)
 
+#define MAC_CLOSE_TAB LG(DE_W)
 #define MAC_HARD_RELOAD LS(LG(DE_R))
 #define MAC_REOPEN LG(DE_T)
 #define MAC_REOPEN_ALL LS(LG(DE_T))
@@ -32,3 +33,5 @@
 // misc
 #define MAC_SNAP LS(LG(N4))
 #define MAC_SNAP_EXT LS(LG(N5))
+#define MVS_CUR_U LG(LA(UP))
+#define MVS_CUR_D LG(LA(DOWN))

@@ -1,0 +1,37 @@
+#define WIN_L_W LC(LEFT) // Move Word wise left
+#define WIN_R_W LC(RIGHT) // Move Word wise right
+
+#define WIN_L_L HOME // Move Line Start
+#define WIN_L_R END // Move Line End
+#define WIN_F_T PG_UP // Move File Start
+#define WIN_F_B PG_DN // Move File End
+
+#define WIN_M_L_U LA(UP) // MOVE Current Line up
+#define WIN_M_L_D LA(DOWN)  // MOVE Current Line up
+
+
+#define WIN_UNDO LC(DE_Z)
+#define WIN_REDO LS(LC(DE_Z))
+#define WIN_CUT LC(DE_X)
+#define WIN_COPY LC(DE_C)
+#define WIN_COPY_W_F LC(LS(DE_V))
+#define WIN_PASTE LC(DE_V)
+
+#define WIN_CLOSE_TAB LC(DE_W)
+#define WIN_HARD_RELOAD LS(LG(DE_R))
+#define WIN_REOPEN LC(DE_T)
+#define WIN_REOPEN_ALL LS(LC(DE_T))
+
+// macOS Mission Control
+#define WIN_MC_ALL LC(UP)
+#define WIN_MC_APP LC(DOWN)
+#define WIN_MC_DESK F11
+
+// mac internal
+#define NARRATOR LG(LC(ENTER))
+
+// misc
+#define WIN_SNAP LS(LG(DE_S))
+#define WIN_SNAP_EXT LS(LG(N5))
+#define WVS_CUR_U LC(LA(UP))
+#define WVS_CUR_D LC(LA(DOWN))

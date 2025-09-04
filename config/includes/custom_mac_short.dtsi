@@ -30,5 +30,5 @@
 #define VOICE_OVER LG(F5)
 
 // misc
-#define MAC_SNAP LS(LG(DE_4))
-#define MAC_SNAP_EXT LS(LG(DE_5))
+#define MAC_SNAP LS(LG(N4))
+#define MAC_SNAP_EXT LS(LG(N5))

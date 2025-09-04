@@ -1,0 +1,34 @@
+#define MAC_L_W LA(LEFT) // Move Word wise left
+#define MAC_R_W LA(RIGHT) // Move Word wise right
+
+#define MAC_L_L LG(LEFT) // Move Line Start
+#define MAC_L_R LG(RIGHT) // Move Line End
+#define MAC_F_T LG(UP) // Move File Start
+#define MAC_F_B LG(DOWN) // Move File End
+
+#define MAC_M_L_U LA(UP) // MOVE Current Line up
+#define MAC_M_L_D LA(DOWN)  // MOVE Current Line up
+
+
+#define MAC_UNDO LG(DE_Z)
+#define MAC_REDO LS(LG(DE_Z))
+#define MAC_CUT LG(DE_X)
+#define MAC_COPY LG(DE_C)
+#define MAC_COPY_W_F MY_MEH(DE_V)
+#define MAC_PASTE LG(DE_V)
+
+#define MAC_HARD_RELOAD LS(LG(DE_R))
+#define MAC_REOPEN LG(DE_T)
+#define MAC_REOPEN_ALL LS(LG(DE_T))
+
+// macOS Mission Control
+#define MAC_MC_ALL LC(UP)
+#define MAC_MC_APP LC(DOWN)
+#define MAC_MC_DESK F11
+
+// mac internal
+#define VOICE_OVER LG(F5)
+
+// misc
+#define MAC_SNAP LS(LG(DE_4))
+#define MAC_SNAP_EXT LS(LG(DE_5))

@@ -15,6 +15,7 @@
 #define MCTRL 4
 #define CODE 5
 #define SYM 6
+#define SYS 7
 
 #define ADAPT 17
 
